@@ -100,8 +100,128 @@ namespace WindowsFormsApplication3
             //input = new int?[] { 1, null, 2, null, null, 3 };
             TreeNode root = ConvertToTree(input);
             InorderTraversal(root);
+            value = new int[] { 3,4, 5, 6, 7,8,9, 0, 1, 2 };
+            value = new int[] { 5,1,2, 3, 4 };
+            this.label1.Text = Search(value, 4).ToString();
         }
 
+        public int Search(int[] nums, int target)
+        {
+            if (nums == null || nums.Length == 0)
+                return -1;
+            int result = 0;
+            int point=-1;
+            List<int> list = new List<int>();
+            for (int i= 0; i < nums.Length - 1; i++)
+            {
+                if (nums[i] > nums[i + 1])
+                {
+                    list.Add(nums[i]);
+                    point = i;
+                    break;
+                }
+                else
+                    list.Add(nums[i]);
+            }
+            if (list.Count > 0 && point!=-1)
+            {
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    if (i < nums.Length - point - 1)
+                    {
+                        nums[i] = nums[point + i + 1];
+                    }
+                    else
+                    {
+                        nums[i] = list[i+point+1 - nums.Length];
+                    }
+                }
+            }
+            int leftindex = 0;
+            int rightindex = nums.Length - 1;
+            result = BinarySearch(nums, ref rightindex, ref leftindex, target);
+            if (-1 < result && result < nums.Length - point - 1)
+                result = result +  point + 1;
+            else if (result > nums.Length - point - 2)
+                result = result - (nums.Length - point -1 );
+            return result;
+        }
+        static void SetCapacity(ref int[] iarr)
+        {
+            Array.Resize<int>(ref iarr, iarr.Length + (2 << 3));
+        }
+        public int BinarySearch(int[] nums, ref int rightindex, ref int leftindex, int target)
+        {
+            //if (index == 0)
+            //{
+            //    index = nums.Length % 2 == 0 ? nums.Length / 2 : (nums.Length - 1) / 2;
+            //}
+            int result=-1;
+            if (target == nums[leftindex])
+                return leftindex;
+            if (target == nums[rightindex])
+                return rightindex;
+            int binary = (rightindex - leftindex) % 2 == 0 ? (rightindex - leftindex) / 2 + leftindex : ((rightindex - leftindex) + 1) / 2 + leftindex;
+            if (binary == rightindex || binary == leftindex)
+                return result;
+            if (nums[binary] > target)
+            {
+                rightindex = binary;
+                result=BinarySearch(nums, ref rightindex, ref leftindex, target);
+            }
+            else if (nums[binary] == target)
+            {
+                return binary;
+            }
+            else
+            {
+                leftindex = binary;
+                result=BinarySearch(nums, ref rightindex, ref leftindex, target);
+            }
+            return result;
+        }
+        public int FindKthLargest(int[] nums, int k)
+        {
+            //int result = 0;
+            MaoPao(ref nums);
+            return nums[k-1];
+        }
+        public void MaoPao(ref int[] arr)
+        {
+            //冒泡排序 
+            int test = 0;//定义一个中间变量，用来交换值
+            //int[] arr = { 45, 1, 8, 2, 9, 89 };//定义一个无序数组，用来排序
+            for (int i = 0; i < arr.Length - 1; i++)//我们外层循环需要循环n-1次
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (arr[j] < arr[j + 1])//判断两个值大小是否要交换值
+                    {
+                        test = arr[j + 1];//如果数组第二个数小于前一个数，那么把第二个小的数先存放在 test中
+                        arr[j + 1] = arr[j];//把前一个大的数放到后面
+                        arr[j] = test;//再把我们存放在test中的小的数放到前面
+                    }
+                }
+            }
+        }
+        public void MaoPaoString(ref string[] arr)
+        {
+            //冒泡排序 
+            string test = "";//定义一个中间变量，用来交换值
+            //int[] arr = { 45, 1, 8, 2, 9, 89 };//定义一个无序数组，用来排序
+            for (int i = 0; i < arr.Length - 1; i++)//我们外层循环需要循环n-1次
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (arr[j].Length < arr[j + 1].Length)//判断两个值大小是否要交换值
+                    {
+                        test = arr[j + 1];//如果数组第二个数小于前一个数，那么把第二个小的数先存放在 test中
+                        arr[j + 1] = arr[j];//把前一个大的数放到后面
+                        arr[j] = test;//再把我们存放在test中的小的数放到前面
+                    }
+                }
+            }
+        }
         public IList<int> InorderTraversal(TreeNode root)
         {
             IList<int> result = new List<int>();
