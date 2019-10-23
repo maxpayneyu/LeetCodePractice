@@ -103,8 +103,472 @@ namespace WindowsFormsApplication3
             value = new int[] { 3,4, 5, 6, 7,8,9, 0, 1, 2 };
             value = new int[] { 5,1,2, 3, 4 };
             this.label1.Text = Search(value, 4).ToString();
+            this.label1.Text = FindMedianSortedArrays(new int[] { 1, 2 }, new int[] { 3, 4 }).ToString();
+            //this.label1.Text = GrayCode(3).ToString();
+            this.label1.Text = MyAtoi("010").ToString();
+            //this.label1.Text = MyAtoi("  -2147482848safajij").ToString();
+            this.label1.Text = UniquePaths(10, 10).ToString();
+            value = new int[] { 70, 4, 83, 56, 94, 72, 78, 43, 2, 86, 65, 100, 94, 56, 41, 66, 3, 33, 10, 3, 45, 94, 15, 12, 78, 60, 58, 0, 58, 15, 21, 7, 11, 41, 12, 96, 83, 77, 47 };
+                //,62,27,19,40,63,30,4,77,52,17,57,21,66,63,29,51,40,37,6,44,42,92,16,64,33,31,51,36,0,29,95,92,35,66,91,19,21,100,95,40,61,15,83,31,55,59,84,21,99,45,64,90,25,40,6,41,5,25,52,59,61,51,37,92,90,20,20,96,66,79,28,83,60,91,30,52,55,1,99,8,68,14,84,59,5,34,93,25,10,93,21,35,66,88,20,97,25,63,80,20,86,33,53,43,86,53,55,61,77,9,2,56,78,43,19,68,69,49,1,6,5,82,46,24,33,85,24,56,51,45,100,94,26,15,33,35,59,25,65,32,26,93,73,0,40,92,56,76,18,2,45,64,66,64,39,77,1,55,90,10,27,85,40,95,78,39,40,62,30,12,57,84,95,86,57,41,52,77,17,9,15,33,17,68,63,59,40,5,63,30,86,57,5,55,47,0,92,95,100,25,79,84,93,83,93,18,20,32,63,65,56,68,7,31,100,88,93,11,43,20,13,54,34,29,90,50,24,13,44,89,57,65,95,58,32,67,38,2,41,4,63,56,88,39,57,10,1,97,98,25,45,96,35,22,0,37,74,98,14,37,77,54,40,17,9,28,83,13,92,3,8,60,52,64,8,87,77,96,70,61,3,96,83,56,5,99,81,94,3,38,91,55,83,15,30,39,54,79,55,86,85,32,27,20,74,91,99,100,46,69,77,34,97,0,50,51,21,12,3,84,84,48,69,94,28,64,36,70,34,70,11,89,58,6,90,86,4,97,63,10,37,48,68,30,29,53,4,91,7,56,63,22,93,69,93,1,85,11,20,41,36,66,67,57,76,85,37,80,99,63,23,71,11,73,41,48,54,61,49,91,97,60,38,99,8,17,2,5,56,3,69,90,62,75,76,55,71,83,34,2,36,56,40,15,62,39,78,7,37,58,22,64,59,80,16,2,34,83,43,40,39,38,35,89,72,56,77,78,14,45,0,57,32,82,93,96,3,51,27,36,38,1,19,66,98,93,91,18,95,93,39,12,40,73,100,17,72,93,25,35,45,91,78,13,97,56,40,69,86,69,99,4,36,36,82,35,52,12,46,74,57,65,91,51,41,42,17,78,49,75,9,23,65,44,47,93,84,70,19,22,57,27,84,57,85,2,61,17,90,34,49,74,64,46,61,0,28,57,78,75,31,27,24,10,93,34,19,75,53,17,26,2,41,89,79,37,14,93,55,74,11,77,60,61,2,68,0,15,12,47,12,48,57,73,17,18,11,83,38,5,36,53,94,40,48,81,53,32,53,12,21,90,100,32,29,94,92,83,80,36,73,59,61,43,100,36,71,89,9,24,56,7,48,34,58,0,43,34,18,1,29,97,70,92,88,0,48,51,53,0,50,21,91,23,34,49,19,17,9,23,43,87,72,39,17,17,97,14,29,4,10,84,10,33,100,86,43,20,22,58,90,70,48,23,75,4,66,97,95,1,80,24,43,97,15,38,53,55,86,63,40,7,26,60,95,12,98,15,95,71,86,46,33,68,32,86,89,18,88,97,32,42,5,57,13,1,23,34,37,13,65,13,47,55,85,37,57,14,89,94,57,13,6,98,47,52,51,19,99,42,1,19,74,60,8,48,28,65,6,12,57,49,27,95,1,2,10,25,49,68,57,32,99,24,19,25,32,89,88,73,96,57,14,65,34,8,82,9,94,91,19,53,61,70,54,4,66,26,8,63,62,9,20,42,17,52,97,51,53,19,48,76,40,80,6,1,89,52,70,38,95,62,24,88,64,42,61,6,50,91,87,69,13,58,43,98,19,94,65,56,72,20,72,92,85,58,46,67,2,23,88,58,25,88,18,92,46,15,18,37,9,90,2,38,0,16,86,44,69,71,70,30,38,17,69,69,80,73,79,56,17,95,12,37,43,5,5,6,42,16,44,22,62,37,86,8,51,73,46,44,15,98,54,22,47,28,11,75,52,49,38,84,55,3,69,100,54,66,6,23,98,22,99,21,74,75,33,67,8,80,90,23,46,93,69,85,46,87,76,93,38,77,37,72,35,3,82,11,67,46,53,29,60,33,12,62,23,27,72,35,63,68,14,35,27,98,94,65,3,13,48,83,27,84,86,49,31,63,40,12,34,79,61,47,29,33,52,100,85,38,24,1,16,62,89,36,74,9,49,62,89 };
+            value = new int[] { 2, 1, 4, 5, 2, 9, 7 };
+            value = new int[] { 70, 4, 83, 56, 94, 72, 78, 43, 2, 86, 65, 100, 94, 56, 41, 66, 3, 33, 10, 3, 45, 94, 15, 12, 78, 60, 58, 0, 58, 15, 21, 7, 11, 41, 12, 96, 83, 77, 47 ,62,27,19,40,63,30,4,77,52,17,57,21,66,63,29,51,40,37,6,44,42,92,16,64,33,31,51,36,0,29,95,92,35,66,91,19,21,100,95,40,61,15,83,31,55,59,84,21,99,45,64,90,25,40,6,41,5,25,52,59,61,51,37,92,90,20,20,96,66,79,28,83,60,91,30,52,55,1,99,8,68,14,84,59,5,34,93,25,10,93,21,35,66,88,20,97,25,63,80,20,86,33,53,43,86,53,55,61,77,9,2,56,78,43,19,68,69,49,1,6,5,82,46,24,33,85,24,56,51,45,100,94,26,15,33,35,59,25,65,32,26,93,73,0,40,92,56,76,18,2,45,64,66,64,39,77,1,55,90,10,27,85,40,95,78,39,40,62,30,12,57,84,95,86,57,41,52,77,17,9,15,33,17,68,63,59,40,5,63,30,86,57,5,55,47,0,92,95,100,25,79,84,93,83,93,18,20,32,63,65,56,68,7,31,100,88,93,11,43,20,13,54,34,29,90,50,24,13,44,89,57,65,95,58,32,67,38,2,41,4,63,56,88,39,57,10,1,97,98,25,45,96,35,22,0,37,74,98,14,37,77,54,40,17,9,28,83,13,92,3,8,60,52,64,8,87,77,96,70,61,3,96,83,56,5,99,81,94,3,38,91,55,83,15,30,39,54,79,55,86,85,32,27,20,74,91,99,100,46,69,77,34,97,0,50,51,21,12,3,84,84,48,69,94,28,64,36,70,34,70,11,89,58,6,90,86,4,97,63,10,37,48,68,30,29,53,4,91,7,56,63,22,93,69,93,1,85,11,20,41,36,66,67,57,76,85,37,80,99,63,23,71,11,73,41,48,54,61,49,91,97,60,38,99,8,17,2,5,56,3,69,90,62,75,76,55,71,83,34,2,36,56,40,15,62,39,78,7,37,58,22,64,59,80,16,2,34,83,43,40,39,38,35,89,72,56,77,78,14,45,0,57,32,82,93,96,3,51,27,36,38,1,19,66,98,93,91,18,95,93,39,12,40,73,100,17,72,93,25,35,45,91,78,13,97,56,40,69,86,69,99,4,36,36,82,35,52,12,46,74,57,65,91,51,41,42,17,78,49,75,9,23,65,44,47,93,84,70,19,22,57,27,84,57,85,2,61,17,90,34,49,74,64,46,61,0,28,57,78,75,31,27,24,10,93,34,19,75,53,17,26,2,41,89,79,37,14,93,55,74,11,77,60,61,2,68,0,15,12,47,12,48,57,73,17,18,11,83,38,5,36,53,94,40,48,81,53,32,53,12,21,90,100,32,29,94,92,83,80,36,73,59,61,43,100,36,71,89,9,24,56,7,48,34,58,0,43,34,18,1,29,97,70,92,88,0,48,51,53,0,50,21,91,23,34,49,19,17,9,23,43,87,72,39,17,17,97,14,29,4,10,84,10,33,100,86,43,20,22,58,90,70,48,23,75,4,66,97,95,1,80,24,43,97,15,38,53,55,86,63,40,7,26,60,95,12,98,15,95,71,86,46,33,68,32,86,89,18,88,97,32,42,5,57,13,1,23,34,37,13,65,13,47,55,85,37,57,14,89,94,57,13,6,98,47,52,51,19,99,42,1,19,74,60,8,48,28,65,6,12,57,49,27,95,1,2,10,25,49,68,57,32,99,24,19,25,32,89,88,73,96,57,14,65,34,8,82,9,94,91,19,53,61,70,54,4,66,26,8,63,62,9,20,42,17,52,97,51,53,19,48,76,40,80,6,1,89,52,70,38,95,62,24,88,64,42,61,6,50,91,87,69,13,58,43,98,19,94,65,56,72,20,72,92,85,58,46,67,2,23,88,58,25,88,18,92,46,15,18,37,9,90,2,38,0,16,86,44,69,71,70,30,38,17,69,69,80,73,79,56,17,95,12,37,43,5,5,6,42,16,44,22,62,37,86,8,51,73,46,44,15,98,54,22,47,28,11,75,52,49,38,84,55,3,69,100,54,66,6,23,98,22,99,21,74,75,33,67,8,80,90,23,46,93,69,85,46,87,76,93,38,77,37,72,35,3,82,11,67,46,53,29,60,33,12,62,23,27,72,35,63,68,14,35,27,98,94,65,3,13,48,83,27,84,86,49,31,63,40,12,34,79,61,47,29,33,52,100,85,38,24,1,16,62,89,36,74,9,49,62,89 };
+            this.label1.Text = MaxProfit7(value).ToString();
+            //this.label1.Text = MaxProfit5(value).ToString();
         }
+        public int MaxProfit7(int[] prices)
+        {
+            int result = new int();
+            if (prices.Length > 500)
+            {
+                List<int[]> profits = new List<int[]>();
+                List<int[]> profits2 = new List<int[]>();
+                for (int i = prices.Length - 1; i > 0; i--)
+                {
+                    int max = 0;
+                    for (int j = i - 1; j > -1; j--)
+                    {
+                        if (prices[i] - prices[j] > max)
+                        {
+                            max = prices[i] - prices[j];
+                            int[] maxProfit = new int[] { j, i, prices[i] - prices[j] };
+                            profits2.Add(maxProfit);
+                        }
+                    }
+                }
+                for (int i = 0; i < prices.Length - 1; i++)
+                {
+                    int max = 0;
+                    for (int j = i + 1; j < prices.Length; j++)
+                    {
+                        if (prices[j] - prices[i] > max)
+                        {
+                            max = prices[j] - prices[i];
+                            int[] maxProfit = new int[] { i, j, prices[j] - prices[i] };
+                            if (ListContainArray(profits2, maxProfit))
+                                profits.Add(maxProfit);
+                        }
+                    }
+                }
+                List<int> alist = new List<int>();
+                List<int> index = new List<int>();
+                List<int[]> blist = new List<int[]>();
+                for (int i = 5; i < prices.Length - 5; i++)
+                {
+                    if (prices[i] > prices[i + 1] && prices[i] < prices[i - 1])
+                    {
+                        alist.Add(i);
+                    }
+                }
+                profits.Sort((x, y) => x[2].CompareTo(y[2]));
+                for (int i = 1; i < alist.Count; i++)
+                {
+                    double d = prices.Length / alist.Count;
+                    //if (alist[i] - alist[i - 1] < d)
+                    //{
+                    //    index.Add(alist[i]);
+                    //}
+                    //else
+                    //{
+                        for (int j = 938; j < profits.Count; j++)
+                        {
+                            if ((alist[i] > profits[j][0] && alist[i] < profits[j][1]) || alist[i] == profits[j][0] || alist[i] == profits[j][1])
+                            {
+                                index.Add(alist[i]);
+                                break;
+                            }
+                        }
+                    //}
+                }
+                foreach (var item in index)
+                {
+                    alist.Remove(item);
+                }
+                for (int i = 0; i < alist.Count; i++)
+                {
+                    if (i != 0)
+                    {
+                        int[] p = new int[alist[i] - alist[i-1]-1];
+                        int count = 0;
+                        for (int j = alist[i - 1]+1; j < alist[i]; j++)
+                        {
+                            p[count] = prices[j];
+                            count++;
+                        }
+                        blist.Add(p);
+                    }
+                    else
+                    {
+                        int[] p = new int[alist[i]];
+                        int count = 0;
+                        for (int j = 0; j < alist[i]; j++)
+                        {
+                            p[count] = prices[j];
+                            count++;
+                        }
+                        blist.Add(p);
+                    }
+                    
+                }
+                foreach (var item in blist)
+                {
+                    result += MaxProfit5(item);
+                }
+            }
+            else
+            {
+                result = MaxProfit5(prices);
+            }
+            return result;
+        }
+        public int MaxProfit5(int[] prices)
+        {
+            int result = new int();
+            List<int[]> profits = new List<int[]>();
+            List<int[]> profits2 = new List<int[]>();
+            for (int i = prices.Length - 1; i > 0; i--)
+            {
+                int max = 0;
+                for (int j = i - 1; j > -1; j--)
+                {
+                    if (prices[i] - prices[j] > max)
+                    {
+                        max = prices[i] - prices[j];
+                        int[] maxProfit = new int[] { j, i, prices[i] - prices[j] };
+                        profits2.Add(maxProfit);
+                    }
+                }
+            }
+            for (int i = 0; i < prices.Length - 1; i++)
+            {
+                int max = 0;
+                for (int j = i + 1; j < prices.Length; j++)
+                {
+                    if (prices[j] - prices[i] > max)
+                    {
+                        max = prices[j] - prices[i];
+                        int[] maxProfit = new int[] { i, j, prices[j] - prices[i] };
+                        if (ListContainArray(profits2, maxProfit))
+                            profits.Add(maxProfit);
+                    }
+                }
+            }
+            _max = 0;
+            //profits.Sort((x, y) => x[0].CompareTo(y[0]));
+            //profits = profits3.Except(profits2).ToList();
+            if (profits.Count > 1)
+            {
+                //foreach (var item in profits)
+                //{
+                //    foreach (var item2 in profits)
+                //    {
+                //        if (item == item2)
+                //            continue;
+                //        if (item[1] > item2[0])
+                //            continue;
+                //        if ((item[2] + item2[2]) > result)
+                //            result = item[2] + item2[2];
+                //    }
+                //    if (item[2] > result)
+                //        result = item[2];
+                //}
+                for (int i = 0; i < (profits.Count > 100 ? profits.Count /2: profits.Count); i++)
+                {
+                    int sum = profits[i][2];
+                    if (sum > _max)
+                    {
+                        _max = sum;
 
+                    }
+                    MaxProfit6(profits, i, ref sum);
+                }
+                result = _max;
+            }
+            else if (profits.Count == 1)
+            {
+                result = profits[0][2];
+            }
+            return result;
+        }
+        public void MaxProfit6(List<int[]> profits,int j,ref int sum)
+        {
+            if (profits.Count > 70)
+            {
+                _max = _max;
+            }
+            for (int i = j+1; i < profits.Count; i++)
+            { 
+                if (profits[i][0]-1<=profits[j][1])
+                    continue;
+                sum += profits[i][2];
+                if (sum > _max)
+                {
+                    _max = sum;
+                    
+                }
+                MaxProfit6(profits, i,ref sum);
+                sum -= profits[i][2];
+            }
+        }
+        #region The Past
+        List<ListNode> list = new List<ListNode>();
+        public ListNode DetectCycle(ListNode head)
+        {
+            if (head == null || head.next == null)
+                return null;
+            ListNode result = head;
+            //while (head.next != null)
+            //{
+            //    if (list.Contains(head.next))
+            //    list.Add(head.next);
+            //}
+            list.Add(head);
+            DetectCycle2(head, ref result);
+            return result;
+        }
+        public void DetectCycle2(ListNode head,ref ListNode result)
+        {
+            if (head.next != null)
+            {
+                if (!list.Contains(head.next))
+                    list.Add(head.next);
+                else
+                {
+                    result = head.next;
+                    return;
+                }
+            }
+            else
+            {
+                result = null;
+                return;
+            }
+            DetectCycle2(head.next,ref result);
+        }
+        public int UniquePaths(int m, int n)
+        {
+            int temp;
+            if (m < n)
+            {
+                temp = m;
+                m = n;
+                n = temp;
+            }
+            long result = 1;
+            List<string> list = new List<string>();
+            for (int i = m; i< m+n-1; i++)
+            {
+                result = result*i;
+                //result = result / (n - 1 + m - i);
+            }
+            if (n > 1)
+            {
+                for (int i = n - 1; i > 1; i--)
+                {
+                    result = result / i;
+                }
+            }
+            else
+                result = 1;
+            return (int)result ;
+        }
+        public int MyAtoi(string str)
+        {
+            int result = 0;
+            string trim = str.TrimStart();
+            bool pom = true;
+            bool flag = true;
+            if (string.IsNullOrEmpty(str.Trim()) || (str.Trim().Substring(0, 1) != "-" && str.Trim().Substring(0, 1) != "+" && !Int32.TryParse(str.Trim().Substring(0, 1), out result)))
+                return 0;
+            if (trim.StartsWith("+") )
+            {
+                trim = trim.Substring(1, trim.Length - 1);
+                if (trim.StartsWith("-") || trim.StartsWith("+"))
+                { return 0; }
+            }
+            if (trim.StartsWith("-"))
+            {
+                pom = false;
+                trim = trim.Substring(1, trim.Length - 1);
+                if (trim.StartsWith("-") || trim.StartsWith("+"))
+                { return 0; }
+            }
+            string num = "";
+            while (trim.Length > 0 && Int32.TryParse(trim.Substring(0, 1), out result))
+            {
+                if (result == 0 && flag)
+                {
+                    
+                }
+                else
+                {
+                    flag = false;
+                    num += trim.Substring(0, 1);
+                }
+                trim = trim.Substring(1, trim.Length - 1);
+            }
+            if (num == "")
+                return 0;
+            long result2 = 0;
+            if (num.Length > 10 || (num.Length == 10 && CompareWithInt32(num,pom)))
+            {
+                num = "2147483648";
+                if (pom)
+                    num = "2147483647";
+                result2 = Convert.ToInt64(num);
+                result = (int)result2;
+            }
+            else
+            {
+                result2 = Convert.ToInt64(num);
+                result = (int)result2;
+            }
+            return pom ? result : -1 * result;
+        }
+        public bool CompareWithInt32(string n,bool yes)
+        {
+            int result = 0;
+            string num = "2147483648";
+            if (yes)
+                num = "2147483647";
+            while (n.Length>0 && Int32.TryParse(n.Substring(0, 1), out result))
+            {
+                if (Convert.ToInt32(num.Substring(0, 1)) > result)
+                    return false;
+                if (Convert.ToInt32(num.Substring(0, 1)) < result)
+                    return true;
+                num = num.Substring(1, n.Length - 1);
+                n = n.Substring(1, n.Length - 1);
+            }
+            return false;
+        }
+        
+        public IList<int> GrayCode(int n)
+        {
+            IList<int> result = new List<int>();
+            if (n == 0)
+            {
+                result.Add(0);
+                return result;
+            }
+            int[] seq=new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                seq[i] = -1;
+            }
+            _backTrack.Add(seq);
+            int count = 0;
+            int[] seq2 = new int[n];
+            seq.CopyTo(seq2, 0);
+            BackTrack(ref seq2, n, ref count);
+            for (int i = 0; i < Math.Pow(2,n); i++)
+            { }
+            foreach (var item in _backTrack)
+            {
+                int sum = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    sum += Convert.ToInt32(item[i] == 1 ? Math.Pow(2, i) : 0);
+                }
+                result.Add(sum);
+            }
+            return result;
+        }
+        List<int[]> _backTrack = new List<int[]>();
+        public void BackTrack(ref int[] seq,int bit,ref int count)
+        {
+            if (_backTrack.Count == Math.Pow(2, bit))
+                return;
+            int[] temp =new int[seq.Length];
+            seq.CopyTo(temp,0);
+            temp[count] = temp[count] * (-1);
+            if (ListContainArray(_backTrack,temp))
+            {
+                temp[count] = temp[count] * (-1);
+                count++;
+                if (count == bit)
+                    count = count - bit;
+                BackTrack(ref temp, bit, ref count);
+            }
+            else
+            {
+                temp.CopyTo(seq, 0);
+                _backTrack.Add(seq);
+                count=0;
+                BackTrack(ref temp, bit, ref count);
+            }
+            
+        }
+        public bool ListContainArray(List<int[]> List, int[] Array)
+        {
+            bool result = true;
+            foreach (var item in List)
+            {
+                for (int i = 0; i < Array.Length; i++)
+                {
+                    if (item[i] != Array[i])
+                    {
+                        result = false;
+                        break;
+                    }
+                    if (i==Array.Length-1)
+                        return true;
+                }
+            }
+            return result;
+        }
+        public double FindMedianSortedArrays(int[] nums1, int[] nums2)
+        {
+            double result=0;
+            List<double> list = new List<double>();
+            foreach (var item in nums1)
+            {
+                list.Add(item);
+            }
+            foreach (var item in nums2)
+            { list.Add(item); }
+            list.Sort(
+                (x, y) => x.CompareTo(y)
+            );
+            if (list.Count % 2 == 0)
+            {
+                result = (list[list.Count / 2] + list[list.Count / 2 - 1]) / 2;
+            }
+            else
+            {
+                result = list[(list.Count-1) / 2] ;
+            }
+            return result;
+        }
+        
+        public int[] ProductExceptSelf(int[] nums)
+        {
+            int[] result = new int[nums.Length];
+            List<int[]> list = new List<int[]>();
+            int[] product = new int[2];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int r = 1;
+                int index = list.FindIndex(item => item[0] == nums[i]);
+                if (index != -1)
+                {
+                    result[i] = list[index][1];
+                    continue;
+                }
+                for (int j = 0; j < nums.Length; j++)
+                {
+                    if (j != i)
+                    {
+                        r = r * nums[j];
+                    }
+                }
+                if (list.Find(item => item[0] == nums[i])==null)
+                {
+                    list.Add(new int[2] { nums[i] ,r});
+                }
+                result[i] = r;
+            }
+            return result;
+        }
         public int Search(int[] nums, int target)
         {
             if (nums == null || nums.Length == 0)
@@ -279,7 +743,7 @@ namespace WindowsFormsApplication3
             //}
         }
 
-        #region The Past
+        
         public int SingleNumber(int[] nums)
         {
             int result = 0;
@@ -550,6 +1014,179 @@ namespace WindowsFormsApplication3
             }
             return queue.Length;
         }
+        public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
+        {
+            TreeNode result = root;
+            _treeList3 = new List<TreeNode3>();
+            if (root != null)
+            {
+                TreeNode3 root2 = new TreeNode3(root.val);
+                Traverse4(root, root2);
+                //Traverse(root2, ref valList);
+                TreeNode3 newp = null;
+                TreeNode3 newq = null;
+                foreach (var item in _treeList3)
+                {
+                    if (item.val == p.val)
+                    {
+                        newp = item;
+                    }
+                    if (item.val == q.val)
+                    {
+                        newq = item;
+                    }
+                    if (newp != null && newq != null)
+                        break;
+                }
+                while (newp != null)
+                {
+                    TreeNode3 tempnewq = newq;
+                    while (newq != null)
+                    {
+                        if (newp.father == newq)
+                        {
+                            return newq;
+                        }
+                        else if (newp == newq.father)
+                        {
+                            return newp;
+                        }
+                        else if (newp == newq)
+                        {
+                            return newq;
+                        }
+                        else
+                        {
+                            //tempnewp = newp.father;
+                            newq = newq.father;
+                        }
+                    }
+                    newq = tempnewq;
+                    newp = newp.father;
+                }
+            }
+            return result;
+        }
+        public TreeNode LowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q)
+        {
+            TreeNode result = root;
+            _treeList = new List<TreeNode2>();
+            _max = 0;
+            if (root != null)
+            {
+                TreeNode2 root2 = new TreeNode2(root.val);
+                _max = root.val;
+                Traverse2(root, root2);
+                //Traverse(root2, ref valList);
+                TreeNode2 newp = null;
+                TreeNode2 newq = null;
+                foreach (var item in _treeList)
+                {
+                    if (item.val == p.val)
+                    {
+                        newp = item;
+                    }
+                    if (item.val == q.val)
+                    {
+                        newq = item;
+                    }
+                    if (newp != null && newq != null)
+                        break;
+                }
+                while (newp != null)
+                {
+                    TreeNode2 tempnewq = newq;
+                    while (newq != null)
+                    {
+                        if (newp.father == newq)
+                        {
+                            Traverse(root, newq.val, ref result);
+                            return result;
+                        }
+                        else if (newp == newq.father)
+                        {
+                            Traverse(root, newp.val, ref result);
+                            return result;
+                        }
+                        else if (newp == newq)
+                        {
+                            Traverse(root, newq.val, ref result);
+                            return result;
+                        }
+                        else
+                        {
+                            //tempnewp = newp.father;
+                            newq = newq.father;
+                        }
+                    }
+                    newq = tempnewq;
+                    newp = newp.father;
+                }
+            }
+            return result;
+        }
+        public void Traverse(TreeNode root, int val, ref TreeNode result)
+        {
+            if (root.val == val)
+                result = root;
+            if (root.left != null)
+            {
+                Traverse(root.left, val, ref result);
+            }
+            if (root.right != null)
+            {
+                Traverse(root.right, val, ref result);
+            }
+        }
+        public void Traverse2(TreeNode root, TreeNode2 root2)
+        {
+            //if (!_treeList.Contains(root2))
+            _treeList.Add(root2);
+            if (root.left != null)
+            {
+                TreeNode2 node = new TreeNode2(root.left.val);
+                root2.left = node;
+                node.father = root2;
+                Traverse2(root.left, node);
+            }
+            if (root.right != null)
+            {
+                TreeNode2 node = new TreeNode2(root.right.val);
+                root2.right = node;
+                node.father = root2;
+                Traverse2(root.right, node);
+            }
+        }
+        List<TreeNode3> _treeList3 = new List<TreeNode3>();
+        public void Traverse4(TreeNode root, TreeNode3 root2)
+        {
+            //if (!_treeList.Contains(root2))
+            _treeList3.Add(root2);
+            if (root.left != null)
+            {
+                TreeNode3 node = new TreeNode3(root.left.val);
+                root2.left = node;
+                node.father = root2;
+                Traverse4(root.left, node);
+            }
+            if (root.right != null)
+            {
+                TreeNode3 node = new TreeNode3(root.right.val);
+                root2.right = node;
+                node.father = root2;
+                Traverse4(root.right, node);
+            }
+        }
+        List<TreeNode2> _treeList = new List<TreeNode2>();
+        public class TreeNode3 : TreeNode
+        {
+            public TreeNode3 father;
+            public TreeNode3(int x)
+                : base(x)
+            {
+                val = x;
+            }
+        }
         public class LRUCache
         {
             int _capacity = 0;
@@ -672,25 +1309,6 @@ namespace WindowsFormsApplication3
             }
             return _max;
         }
-        public void Traverse2(TreeNode root, TreeNode2 root2)
-        {
-            //if (!_treeList.Contains(root2))
-            _treeList.Add(root2);
-            if (root.left != null)
-            {
-                TreeNode2 node = new TreeNode2(root.left.val);
-                root2.left = node;
-                node.father = root2;
-                Traverse2(root.left, node);
-            }
-            if (root.right != null)
-            {
-                TreeNode2 node = new TreeNode2(root.right.val);
-                root2.right = node;
-                node.father = root2;
-                Traverse2(root.right, node);
-            }
-        }
         public void Traverse3(TreeNode2 root, int dir, int sum)
         {
             //_treeList.Add(root);
@@ -738,7 +1356,6 @@ namespace WindowsFormsApplication3
 
             //}
         }
-        List<TreeNode2> _treeList = new List<TreeNode2>();
         
         public class TreeNode
         {
