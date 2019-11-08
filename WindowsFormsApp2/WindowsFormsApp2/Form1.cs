@@ -17,9 +17,9 @@ namespace WindowsFormsApplication3
         {
             InitializeComponent();
         }
-//        输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
-//输出：7 -> 0 -> 8
-//原因：342 + 465 = 807
+        //        输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+        //输出：7 -> 0 -> 8
+        //原因：342 + 465 = 807
         private void button1_Click(object sender, EventArgs e)
         {
             //ListNode l1=new ListNode(2);
@@ -33,9 +33,9 @@ namespace WindowsFormsApplication3
             //l2.next = l22;
             //ListNode l23 = new ListNode(4);
             //l22.next = l23;
-            int[] a = new int[] {  -1,2,1,-4 };
+            int[] a = new int[] { -1, 2, 1, -4 };
             //a = new int[] { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 };
-            ListNode l1=convertToListNode(a);
+            ListNode l1 = convertToListNode(a);
             int[] b = new int[] { 2 };
             ListNode l2 = convertToListNode(b);
             //this.label1.Text = AddTwoNumbers(l1, l2).val.ToString() ;
@@ -50,7 +50,7 @@ namespace WindowsFormsApplication3
             //ListNode l3 = convertToListNode(b);
             //ListNode[] lists = new ListNode[] { l1, l2,l3 };
             //this.label1.Text = getValueString(MergeKLists(lists));
-            int[][] matrix=new int[][]{
+            int[][] matrix = new int[][]{
 
 　　　　        new int[]{1,2,3,4,5},
 
@@ -62,17 +62,17 @@ namespace WindowsFormsApplication3
                 new int[] {26,27,28,29,30},
                 new int[] {31,32,33,34,35}
 　　　　        };
-            matrix=new int[][]{new int[]{1}};
+            matrix = new int[][] { new int[] { 1 } };
             //this.label1.Text = SpiralOrder(matrix).Count.ToString();
             //this.label1.Text = GenerateMatrix(Convert.ToInt32(this.textBox1.Text)).Length.ToString();
             int?[] input = new int?[] { 3, 9, 20, null, 6, null, 7, null, null, 3, null, null, null, 7, 8 };
             //this.label1.Text = MaxDepth(ConvertToTree(input)).ToString();
-            
+
             input = new int?[] { -10, 9, 20, null, null, 15, 7 };
             //this.label1.Text = MaxPathSum(ConvertToTree(input)).ToString();
             char[] chars = new char[] { 'A', 'B', 'C', 'A', 'D', 'C', 'A', 'C', 'A', 'B', 'B' };
-            chars = new char[] { 'A', 'B',  'A'};
-            this.label1.Text = LeastInterval(chars,2).ToString();
+            chars = new char[] { 'A', 'B', 'A' };
+            this.label1.Text = LeastInterval(chars, 2).ToString();
 
             MinStack minStack = new MinStack();
             //minStack.Push(-2);
@@ -83,18 +83,18 @@ namespace WindowsFormsApplication3
             //int top =minStack.Top();      //--> 返回 0.
             //this.label1.Text  = minStack.GetMin().ToString();   //--> 返回 -2.
 
-            string[] command = new string[] { "MinStack","push","push","push","top","pop","getMin","pop","getMin","pop","push","top","getMin","push","top","getMin","pop","getMin"};
-            int[] value = new int[]{ 0,2147483646,2147483646,2147483647,0,0,0,0,0,0,2147483647,0,0,-2147483648,0,0,0,0};
-//            ["MinStack","push","push","push","getMin","pop","top","getMin"]
-//[[],[-2],[0],[-3],[],[],[],[]]
+            string[] command = new string[] { "MinStack", "push", "push", "push", "top", "pop", "getMin", "pop", "getMin", "pop", "push", "top", "getMin", "push", "top", "getMin", "pop", "getMin" };
+            int[] value = new int[] { 0, 2147483646, 2147483646, 2147483647, 0, 0, 0, 0, 0, 0, 2147483647, 0, 0, -2147483648, 0, 0, 0, 0 };
+            //            ["MinStack","push","push","push","getMin","pop","top","getMin"]
+            //[[],[-2],[0],[-3],[],[],[],[]]
             command = new string[] { "MinStack", "push", "push", "push", "getMin", "pop", "top", "getMin" };
-            value = new int[]{0,-2,0,-3,0,0,0,0};
+            value = new int[] { 0, -2, 0, -3, 0, 0, 0, 0 };
             RunCommand(minStack, command, value);
 
             value = new int[] { 1, 2, 3 };
             this.label1.Text = Permute(value).ToString();
 
-            value = new int[] { 4,1,2,1, 2 };
+            value = new int[] { 4, 1, 2, 1, 2 };
             this.label1.Text = SingleNumber(value).ToString();
             #endregion
 
@@ -102,8 +102,8 @@ namespace WindowsFormsApplication3
             //input = new int?[] { 1, null, 2, null, null, 3 };
             TreeNode root = ConvertToTree(input);
             InorderTraversal(root);
-            value = new int[] { 3,4, 5, 6, 7,8,9, 0, 1, 2 };
-            value = new int[] { 5,1,2, 3, 4 };
+            value = new int[] { 3, 4, 5, 6, 7, 8, 9, 0, 1, 2 };
+            value = new int[] { 5, 1, 2, 3, 4 };
             this.label1.Text = Search(value, 4).ToString();
             this.label1.Text = FindMedianSortedArrays(new int[] { 1, 2 }, new int[] { 3, 4 }).ToString();
             //this.label1.Text = GrayCode(3).ToString();
@@ -111,16 +111,16 @@ namespace WindowsFormsApplication3
             //this.label1.Text = MyAtoi("  -2147482848safajij").ToString();
             this.label1.Text = UniquePaths(10, 10).ToString();
             value = new int[] { 70, 4, 83, 56, 94, 72, 78, 43, 2, 86, 65, 100, 94, 56, 41, 66, 3, 33, 10, 3, 45, 94, 15, 12, 78, 60, 58, 0, 58, 15, 21, 7, 11, 41, 12, 96, 83, 77, 47 };
-                //,62,27,19,40,63,30,4,77,52,17,57,21,66,63,29,51,40,37,6,44,42,92,16,64,33,31,51,36,0,29,95,92,35,66,91,19,21,100,95,40,61,15,83,31,55,59,84,21,99,45,64,90,25,40,6,41,5,25,52,59,61,51,37,92,90,20,20,96,66,79,28,83,60,91,30,52,55,1,99,8,68,14,84,59,5,34,93,25,10,93,21,35,66,88,20,97,25,63,80,20,86,33,53,43,86,53,55,61,77,9,2,56,78,43,19,68,69,49,1,6,5,82,46,24,33,85,24,56,51,45,100,94,26,15,33,35,59,25,65,32,26,93,73,0,40,92,56,76,18,2,45,64,66,64,39,77,1,55,90,10,27,85,40,95,78,39,40,62,30,12,57,84,95,86,57,41,52,77,17,9,15,33,17,68,63,59,40,5,63,30,86,57,5,55,47,0,92,95,100,25,79,84,93,83,93,18,20,32,63,65,56,68,7,31,100,88,93,11,43,20,13,54,34,29,90,50,24,13,44,89,57,65,95,58,32,67,38,2,41,4,63,56,88,39,57,10,1,97,98,25,45,96,35,22,0,37,74,98,14,37,77,54,40,17,9,28,83,13,92,3,8,60,52,64,8,87,77,96,70,61,3,96,83,56,5,99,81,94,3,38,91,55,83,15,30,39,54,79,55,86,85,32,27,20,74,91,99,100,46,69,77,34,97,0,50,51,21,12,3,84,84,48,69,94,28,64,36,70,34,70,11,89,58,6,90,86,4,97,63,10,37,48,68,30,29,53,4,91,7,56,63,22,93,69,93,1,85,11,20,41,36,66,67,57,76,85,37,80,99,63,23,71,11,73,41,48,54,61,49,91,97,60,38,99,8,17,2,5,56,3,69,90,62,75,76,55,71,83,34,2,36,56,40,15,62,39,78,7,37,58,22,64,59,80,16,2,34,83,43,40,39,38,35,89,72,56,77,78,14,45,0,57,32,82,93,96,3,51,27,36,38,1,19,66,98,93,91,18,95,93,39,12,40,73,100,17,72,93,25,35,45,91,78,13,97,56,40,69,86,69,99,4,36,36,82,35,52,12,46,74,57,65,91,51,41,42,17,78,49,75,9,23,65,44,47,93,84,70,19,22,57,27,84,57,85,2,61,17,90,34,49,74,64,46,61,0,28,57,78,75,31,27,24,10,93,34,19,75,53,17,26,2,41,89,79,37,14,93,55,74,11,77,60,61,2,68,0,15,12,47,12,48,57,73,17,18,11,83,38,5,36,53,94,40,48,81,53,32,53,12,21,90,100,32,29,94,92,83,80,36,73,59,61,43,100,36,71,89,9,24,56,7,48,34,58,0,43,34,18,1,29,97,70,92,88,0,48,51,53,0,50,21,91,23,34,49,19,17,9,23,43,87,72,39,17,17,97,14,29,4,10,84,10,33,100,86,43,20,22,58,90,70,48,23,75,4,66,97,95,1,80,24,43,97,15,38,53,55,86,63,40,7,26,60,95,12,98,15,95,71,86,46,33,68,32,86,89,18,88,97,32,42,5,57,13,1,23,34,37,13,65,13,47,55,85,37,57,14,89,94,57,13,6,98,47,52,51,19,99,42,1,19,74,60,8,48,28,65,6,12,57,49,27,95,1,2,10,25,49,68,57,32,99,24,19,25,32,89,88,73,96,57,14,65,34,8,82,9,94,91,19,53,61,70,54,4,66,26,8,63,62,9,20,42,17,52,97,51,53,19,48,76,40,80,6,1,89,52,70,38,95,62,24,88,64,42,61,6,50,91,87,69,13,58,43,98,19,94,65,56,72,20,72,92,85,58,46,67,2,23,88,58,25,88,18,92,46,15,18,37,9,90,2,38,0,16,86,44,69,71,70,30,38,17,69,69,80,73,79,56,17,95,12,37,43,5,5,6,42,16,44,22,62,37,86,8,51,73,46,44,15,98,54,22,47,28,11,75,52,49,38,84,55,3,69,100,54,66,6,23,98,22,99,21,74,75,33,67,8,80,90,23,46,93,69,85,46,87,76,93,38,77,37,72,35,3,82,11,67,46,53,29,60,33,12,62,23,27,72,35,63,68,14,35,27,98,94,65,3,13,48,83,27,84,86,49,31,63,40,12,34,79,61,47,29,33,52,100,85,38,24,1,16,62,89,36,74,9,49,62,89 };
+            //,62,27,19,40,63,30,4,77,52,17,57,21,66,63,29,51,40,37,6,44,42,92,16,64,33,31,51,36,0,29,95,92,35,66,91,19,21,100,95,40,61,15,83,31,55,59,84,21,99,45,64,90,25,40,6,41,5,25,52,59,61,51,37,92,90,20,20,96,66,79,28,83,60,91,30,52,55,1,99,8,68,14,84,59,5,34,93,25,10,93,21,35,66,88,20,97,25,63,80,20,86,33,53,43,86,53,55,61,77,9,2,56,78,43,19,68,69,49,1,6,5,82,46,24,33,85,24,56,51,45,100,94,26,15,33,35,59,25,65,32,26,93,73,0,40,92,56,76,18,2,45,64,66,64,39,77,1,55,90,10,27,85,40,95,78,39,40,62,30,12,57,84,95,86,57,41,52,77,17,9,15,33,17,68,63,59,40,5,63,30,86,57,5,55,47,0,92,95,100,25,79,84,93,83,93,18,20,32,63,65,56,68,7,31,100,88,93,11,43,20,13,54,34,29,90,50,24,13,44,89,57,65,95,58,32,67,38,2,41,4,63,56,88,39,57,10,1,97,98,25,45,96,35,22,0,37,74,98,14,37,77,54,40,17,9,28,83,13,92,3,8,60,52,64,8,87,77,96,70,61,3,96,83,56,5,99,81,94,3,38,91,55,83,15,30,39,54,79,55,86,85,32,27,20,74,91,99,100,46,69,77,34,97,0,50,51,21,12,3,84,84,48,69,94,28,64,36,70,34,70,11,89,58,6,90,86,4,97,63,10,37,48,68,30,29,53,4,91,7,56,63,22,93,69,93,1,85,11,20,41,36,66,67,57,76,85,37,80,99,63,23,71,11,73,41,48,54,61,49,91,97,60,38,99,8,17,2,5,56,3,69,90,62,75,76,55,71,83,34,2,36,56,40,15,62,39,78,7,37,58,22,64,59,80,16,2,34,83,43,40,39,38,35,89,72,56,77,78,14,45,0,57,32,82,93,96,3,51,27,36,38,1,19,66,98,93,91,18,95,93,39,12,40,73,100,17,72,93,25,35,45,91,78,13,97,56,40,69,86,69,99,4,36,36,82,35,52,12,46,74,57,65,91,51,41,42,17,78,49,75,9,23,65,44,47,93,84,70,19,22,57,27,84,57,85,2,61,17,90,34,49,74,64,46,61,0,28,57,78,75,31,27,24,10,93,34,19,75,53,17,26,2,41,89,79,37,14,93,55,74,11,77,60,61,2,68,0,15,12,47,12,48,57,73,17,18,11,83,38,5,36,53,94,40,48,81,53,32,53,12,21,90,100,32,29,94,92,83,80,36,73,59,61,43,100,36,71,89,9,24,56,7,48,34,58,0,43,34,18,1,29,97,70,92,88,0,48,51,53,0,50,21,91,23,34,49,19,17,9,23,43,87,72,39,17,17,97,14,29,4,10,84,10,33,100,86,43,20,22,58,90,70,48,23,75,4,66,97,95,1,80,24,43,97,15,38,53,55,86,63,40,7,26,60,95,12,98,15,95,71,86,46,33,68,32,86,89,18,88,97,32,42,5,57,13,1,23,34,37,13,65,13,47,55,85,37,57,14,89,94,57,13,6,98,47,52,51,19,99,42,1,19,74,60,8,48,28,65,6,12,57,49,27,95,1,2,10,25,49,68,57,32,99,24,19,25,32,89,88,73,96,57,14,65,34,8,82,9,94,91,19,53,61,70,54,4,66,26,8,63,62,9,20,42,17,52,97,51,53,19,48,76,40,80,6,1,89,52,70,38,95,62,24,88,64,42,61,6,50,91,87,69,13,58,43,98,19,94,65,56,72,20,72,92,85,58,46,67,2,23,88,58,25,88,18,92,46,15,18,37,9,90,2,38,0,16,86,44,69,71,70,30,38,17,69,69,80,73,79,56,17,95,12,37,43,5,5,6,42,16,44,22,62,37,86,8,51,73,46,44,15,98,54,22,47,28,11,75,52,49,38,84,55,3,69,100,54,66,6,23,98,22,99,21,74,75,33,67,8,80,90,23,46,93,69,85,46,87,76,93,38,77,37,72,35,3,82,11,67,46,53,29,60,33,12,62,23,27,72,35,63,68,14,35,27,98,94,65,3,13,48,83,27,84,86,49,31,63,40,12,34,79,61,47,29,33,52,100,85,38,24,1,16,62,89,36,74,9,49,62,89 };
             value = new int[] { 2, 1, 4, 5, 2, 9, 7 };
-            value = new int[] { 70, 4, 83, 56, 94, 72, 78, 43, 2, 86, 65, 100, 94, 56, 41, 66, 3, 33, 10, 3, 45, 94, 15, 12, 78, 60, 58, 0, 58, 15, 21, 7, 11, 41, 12, 96, 83, 77, 47 ,62,27,19,40,63,30,4,77,52,17,57,21,66,63,29,51,40,37,6,44,42,92,16,64,33,31,51,36,0,29,95,92,35,66,91,19,21,100,95,40,61,15,83,31,55,59,84,21,99,45,64,90,25,40,6,41,5,25,52,59,61,51,37,92,90,20,20,96,66,79,28,83,60,91,30,52,55,1,99,8,68,14,84,59,5,34,93,25,10,93,21,35,66,88,20,97,25,63,80,20,86,33,53,43,86,53,55,61,77,9,2,56,78,43,19,68,69,49,1,6,5,82,46,24,33,85,24,56,51,45,100,94,26,15,33,35,59,25,65,32,26,93,73,0,40,92,56,76,18,2,45,64,66,64,39,77,1,55,90,10,27,85,40,95,78,39,40,62,30,12,57,84,95,86,57,41,52,77,17,9,15,33,17,68,63,59,40,5,63,30,86,57,5,55,47,0,92,95,100,25,79,84,93,83,93,18,20,32,63,65,56,68,7,31,100,88,93,11,43,20,13,54,34,29,90,50,24,13,44,89,57,65,95,58,32,67,38,2,41,4,63,56,88,39,57,10,1,97,98,25,45,96,35,22,0,37,74,98,14,37,77,54,40,17,9,28,83,13,92,3,8,60,52,64,8,87,77,96,70,61,3,96,83,56,5,99,81,94,3,38,91,55,83,15,30,39,54,79,55,86,85,32,27,20,74,91,99,100,46,69,77,34,97,0,50,51,21,12,3,84,84,48,69,94,28,64,36,70,34,70,11,89,58,6,90,86,4,97,63,10,37,48,68,30,29,53,4,91,7,56,63,22,93,69,93,1,85,11,20,41,36,66,67,57,76,85,37,80,99,63,23,71,11,73,41,48,54,61,49,91,97,60,38,99,8,17,2,5,56,3,69,90,62,75,76,55,71,83,34,2,36,56,40,15,62,39,78,7,37,58,22,64,59,80,16,2,34,83,43,40,39,38,35,89,72,56,77,78,14,45,0,57,32,82,93,96,3,51,27,36,38,1,19,66,98,93,91,18,95,93,39,12,40,73,100,17,72,93,25,35,45,91,78,13,97,56,40,69,86,69,99,4,36,36,82,35,52,12,46,74,57,65,91,51,41,42,17,78,49,75,9,23,65,44,47,93,84,70,19,22,57,27,84,57,85,2,61,17,90,34,49,74,64,46,61,0,28,57,78,75,31,27,24,10,93,34,19,75,53,17,26,2,41,89,79,37,14,93,55,74,11,77,60,61,2,68,0,15,12,47,12,48,57,73,17,18,11,83,38,5,36,53,94,40,48,81,53,32,53,12,21,90,100,32,29,94,92,83,80,36,73,59,61,43,100,36,71,89,9,24,56,7,48,34,58,0,43,34,18,1,29,97,70,92,88,0,48,51,53,0,50,21,91,23,34,49,19,17,9,23,43,87,72,39,17,17,97,14,29,4,10,84,10,33,100,86,43,20,22,58,90,70,48,23,75,4,66,97,95,1,80,24,43,97,15,38,53,55,86,63,40,7,26,60,95,12,98,15,95,71,86,46,33,68,32,86,89,18,88,97,32,42,5,57,13,1,23,34,37,13,65,13,47,55,85,37,57,14,89,94,57,13,6,98,47,52,51,19,99,42,1,19,74,60,8,48,28,65,6,12,57,49,27,95,1,2,10,25,49,68,57,32,99,24,19,25,32,89,88,73,96,57,14,65,34,8,82,9,94,91,19,53,61,70,54,4,66,26,8,63,62,9,20,42,17,52,97,51,53,19,48,76,40,80,6,1,89,52,70,38,95,62,24,88,64,42,61,6,50,91,87,69,13,58,43,98,19,94,65,56,72,20,72,92,85,58,46,67,2,23,88,58,25,88,18,92,46,15,18,37,9,90,2,38,0,16,86,44,69,71,70,30,38,17,69,69,80,73,79,56,17,95,12,37,43,5,5,6,42,16,44,22,62,37,86,8,51,73,46,44,15,98,54,22,47,28,11,75,52,49,38,84,55,3,69,100,54,66,6,23,98,22,99,21,74,75,33,67,8,80,90,23,46,93,69,85,46,87,76,93,38,77,37,72,35,3,82,11,67,46,53,29,60,33,12,62,23,27,72,35,63,68,14,35,27,98,94,65,3,13,48,83,27,84,86,49,31,63,40,12,34,79,61,47,29,33,52,100,85,38,24,1,16,62,89,36,74,9,49,62,89 };
+            value = new int[] { 70, 4, 83, 56, 94, 72, 78, 43, 2, 86, 65, 100, 94, 56, 41, 66, 3, 33, 10, 3, 45, 94, 15, 12, 78, 60, 58, 0, 58, 15, 21, 7, 11, 41, 12, 96, 83, 77, 47, 62, 27, 19, 40, 63, 30, 4, 77, 52, 17, 57, 21, 66, 63, 29, 51, 40, 37, 6, 44, 42, 92, 16, 64, 33, 31, 51, 36, 0, 29, 95, 92, 35, 66, 91, 19, 21, 100, 95, 40, 61, 15, 83, 31, 55, 59, 84, 21, 99, 45, 64, 90, 25, 40, 6, 41, 5, 25, 52, 59, 61, 51, 37, 92, 90, 20, 20, 96, 66, 79, 28, 83, 60, 91, 30, 52, 55, 1, 99, 8, 68, 14, 84, 59, 5, 34, 93, 25, 10, 93, 21, 35, 66, 88, 20, 97, 25, 63, 80, 20, 86, 33, 53, 43, 86, 53, 55, 61, 77, 9, 2, 56, 78, 43, 19, 68, 69, 49, 1, 6, 5, 82, 46, 24, 33, 85, 24, 56, 51, 45, 100, 94, 26, 15, 33, 35, 59, 25, 65, 32, 26, 93, 73, 0, 40, 92, 56, 76, 18, 2, 45, 64, 66, 64, 39, 77, 1, 55, 90, 10, 27, 85, 40, 95, 78, 39, 40, 62, 30, 12, 57, 84, 95, 86, 57, 41, 52, 77, 17, 9, 15, 33, 17, 68, 63, 59, 40, 5, 63, 30, 86, 57, 5, 55, 47, 0, 92, 95, 100, 25, 79, 84, 93, 83, 93, 18, 20, 32, 63, 65, 56, 68, 7, 31, 100, 88, 93, 11, 43, 20, 13, 54, 34, 29, 90, 50, 24, 13, 44, 89, 57, 65, 95, 58, 32, 67, 38, 2, 41, 4, 63, 56, 88, 39, 57, 10, 1, 97, 98, 25, 45, 96, 35, 22, 0, 37, 74, 98, 14, 37, 77, 54, 40, 17, 9, 28, 83, 13, 92, 3, 8, 60, 52, 64, 8, 87, 77, 96, 70, 61, 3, 96, 83, 56, 5, 99, 81, 94, 3, 38, 91, 55, 83, 15, 30, 39, 54, 79, 55, 86, 85, 32, 27, 20, 74, 91, 99, 100, 46, 69, 77, 34, 97, 0, 50, 51, 21, 12, 3, 84, 84, 48, 69, 94, 28, 64, 36, 70, 34, 70, 11, 89, 58, 6, 90, 86, 4, 97, 63, 10, 37, 48, 68, 30, 29, 53, 4, 91, 7, 56, 63, 22, 93, 69, 93, 1, 85, 11, 20, 41, 36, 66, 67, 57, 76, 85, 37, 80, 99, 63, 23, 71, 11, 73, 41, 48, 54, 61, 49, 91, 97, 60, 38, 99, 8, 17, 2, 5, 56, 3, 69, 90, 62, 75, 76, 55, 71, 83, 34, 2, 36, 56, 40, 15, 62, 39, 78, 7, 37, 58, 22, 64, 59, 80, 16, 2, 34, 83, 43, 40, 39, 38, 35, 89, 72, 56, 77, 78, 14, 45, 0, 57, 32, 82, 93, 96, 3, 51, 27, 36, 38, 1, 19, 66, 98, 93, 91, 18, 95, 93, 39, 12, 40, 73, 100, 17, 72, 93, 25, 35, 45, 91, 78, 13, 97, 56, 40, 69, 86, 69, 99, 4, 36, 36, 82, 35, 52, 12, 46, 74, 57, 65, 91, 51, 41, 42, 17, 78, 49, 75, 9, 23, 65, 44, 47, 93, 84, 70, 19, 22, 57, 27, 84, 57, 85, 2, 61, 17, 90, 34, 49, 74, 64, 46, 61, 0, 28, 57, 78, 75, 31, 27, 24, 10, 93, 34, 19, 75, 53, 17, 26, 2, 41, 89, 79, 37, 14, 93, 55, 74, 11, 77, 60, 61, 2, 68, 0, 15, 12, 47, 12, 48, 57, 73, 17, 18, 11, 83, 38, 5, 36, 53, 94, 40, 48, 81, 53, 32, 53, 12, 21, 90, 100, 32, 29, 94, 92, 83, 80, 36, 73, 59, 61, 43, 100, 36, 71, 89, 9, 24, 56, 7, 48, 34, 58, 0, 43, 34, 18, 1, 29, 97, 70, 92, 88, 0, 48, 51, 53, 0, 50, 21, 91, 23, 34, 49, 19, 17, 9, 23, 43, 87, 72, 39, 17, 17, 97, 14, 29, 4, 10, 84, 10, 33, 100, 86, 43, 20, 22, 58, 90, 70, 48, 23, 75, 4, 66, 97, 95, 1, 80, 24, 43, 97, 15, 38, 53, 55, 86, 63, 40, 7, 26, 60, 95, 12, 98, 15, 95, 71, 86, 46, 33, 68, 32, 86, 89, 18, 88, 97, 32, 42, 5, 57, 13, 1, 23, 34, 37, 13, 65, 13, 47, 55, 85, 37, 57, 14, 89, 94, 57, 13, 6, 98, 47, 52, 51, 19, 99, 42, 1, 19, 74, 60, 8, 48, 28, 65, 6, 12, 57, 49, 27, 95, 1, 2, 10, 25, 49, 68, 57, 32, 99, 24, 19, 25, 32, 89, 88, 73, 96, 57, 14, 65, 34, 8, 82, 9, 94, 91, 19, 53, 61, 70, 54, 4, 66, 26, 8, 63, 62, 9, 20, 42, 17, 52, 97, 51, 53, 19, 48, 76, 40, 80, 6, 1, 89, 52, 70, 38, 95, 62, 24, 88, 64, 42, 61, 6, 50, 91, 87, 69, 13, 58, 43, 98, 19, 94, 65, 56, 72, 20, 72, 92, 85, 58, 46, 67, 2, 23, 88, 58, 25, 88, 18, 92, 46, 15, 18, 37, 9, 90, 2, 38, 0, 16, 86, 44, 69, 71, 70, 30, 38, 17, 69, 69, 80, 73, 79, 56, 17, 95, 12, 37, 43, 5, 5, 6, 42, 16, 44, 22, 62, 37, 86, 8, 51, 73, 46, 44, 15, 98, 54, 22, 47, 28, 11, 75, 52, 49, 38, 84, 55, 3, 69, 100, 54, 66, 6, 23, 98, 22, 99, 21, 74, 75, 33, 67, 8, 80, 90, 23, 46, 93, 69, 85, 46, 87, 76, 93, 38, 77, 37, 72, 35, 3, 82, 11, 67, 46, 53, 29, 60, 33, 12, 62, 23, 27, 72, 35, 63, 68, 14, 35, 27, 98, 94, 65, 3, 13, 48, 83, 27, 84, 86, 49, 31, 63, 40, 12, 34, 79, 61, 47, 29, 33, 52, 100, 85, 38, 24, 1, 16, 62, 89, 36, 74, 9, 49, 62, 89 };
             this.label1.Text = MaxProfit7(value).ToString();
             //this.label1.Text = MaxProfit5(value).ToString();
             input = new int?[] { 4, 2, null, 1, 3 };
             root = ConvertToTree(input);
             this.label1.Text = Rob(root).ToString();
             this.label1.Text = LetterCombinations("23").ToString();
-            value = new int[] { 0,1,0,2,1,0,1,3,2,1,2,1 };
+            value = new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
             this.label1.Text = Trap(value).ToString();
             char[][] grid = new char[][]{
 
@@ -164,16 +164,16 @@ namespace WindowsFormsApplication3
             input = new int?[] { 1, 2, 5, 3, 4, null, 6 };
             root = ConvertToTree(input);
             Flatten(root);
-            value = new int[] { 1,  2 ,0,1};
+            value = new int[] { 1, 2, 0, 1 };
             this.label1.Text = LongestConsecutive(value).ToString();
-            
+
             //DailyTemperatures(value);
             string s = "2[abc]3[cd]ef";
             this.label1.Text = DecodeString(s);
 
             input = new int?[] { 1, 3, 2, 14, 10, 4, 6, null, null, null, 11, 8, 5, 9, 7, null, null, null, null, null, null, null, null, 15, null, 16, 13, null, null, 12 };
             root = ConvertToTree(input);
-            root =LcaDeepestLeaves(root);
+            root = LcaDeepestLeaves(root);
             value = new int[] { 3, 1, 5, 8 };
             this.label1.Text = MaxCoins(value).ToString();
             this.label1.Text = Reverse(-123).ToString();
@@ -184,22 +184,257 @@ namespace WindowsFormsApplication3
             int param_3 = obj.Sum(3, 'C', new string[] { "A1", "A1:B2" });
             obj.Set(2, 'B', 2);
 
+            obj = new Excel(5, 'E');
+            obj.Set(1, 'A', 5);
+            param_3 = obj.Sum(1, 'C', new string[] { "A1", "A1:B1" });
+            param_3 = obj.Sum(1, 'B', new string[] { "A1:A5" });
+            obj.Set(5, 'A', 10);
+            param_2 = obj.Get(1, 'B');
+            param_2 = obj.Get(1, 'C');
+            //obj.Set(1, 'A', 5);
+            //param_2 = obj.Get(2, 'B');
+            obj = new Excel(5, 'E');
+            obj.Set(1, 'A', 1);
+            param_3 = obj.Sum(2, 'B', new string[] { "A1", "A1" });
+            obj.Set(1, 'A', 2);
+            param_3 = obj.Sum(3, 'C', new string[] { "B2", "A1:B2" });
+            obj.Set(2, 'B', 0);
+            param_2 = obj.Get(3, 'C');
+
+            obj = new Excel(26, 'Z');
+            for (int i = 0; i < 26; i++)
+            {
+                obj._excel[0, i] = i;
+            }
+            param_3 = obj.Sum(2, 'A', new string[] { "Z1:Z1" });
+            param_3 = obj.Sum(2, 'B', new string[] { "W1:Y1" });
+
+            Node Node5 = new Node(5, new List<Node> { });
+            Node Node6 = new Node(6, new List<Node> { });
+            
+            Node bNode = new Node(2, new List<Node> { });
+            Node cNode = new Node(3, new List<Node> { Node5, Node6 });
+            Node dNode = new Node(4, new List<Node> { });
+            Node aNode = new Node(1, new List<Node> { bNode, cNode, dNode });
+            Codec codec = new Codec();
+            aNode = null;
+            root=codec.encode(aNode);
+            aNode = codec.decode(root);
+        }
+
+        // Definition for a Node.
+        public class Node
+        {
+            public int val;
+            public IList<Node> children;
+
+            public Node() { }
+            public Node(int _val, IList<Node> _children)
+            {
+                val = _val;
+                children = _children;
+            }
+        }
+        public class Codec
+        {
+
+            // Encodes an n-ary tree to a binary tree.
+            public TreeNode encode(Node root)
+            {
+                if (root == null)
+                {
+                    return null;
+                }
+                TreeNode result = new TreeNode(root.val);
+                TraverseNode(result, root);
+                return result;
+            }
+            public void TraverseNode(TreeNode root, Node result)
+            {
+                TreeNode temp = root;
+                for (int i=0;i<result.children.Count;i++)
+                {
+                    TreeNode treeNode;
+                    if (i == 0)
+                    { 
+                        treeNode=new TreeNode(result.children[i].val);
+                        root.left = treeNode;
+                        temp = treeNode;
+                    }
+                    //else if (i == 1)
+                    //{
+                    //    TreeNode treeNode = new TreeNode(result.children[i].val);
+                    //    root.right = treeNode;
+                    //    temp = treeNode;
+                    //}
+                    else
+                    {
+                        treeNode = new TreeNode(result.children[i].val);
+                        temp.right = treeNode;
+                        temp = treeNode;
+                    }
+                    if (result.children[i].children.Count != 0)
+                    {
+                        TraverseNode(treeNode, result.children[i]);
+                    }
+                }
+            }
+            List<TreeNode3> _treeList3 = new List<TreeNode3>();
+            List<Node> _treeListNode = new List<Node>();
+            // Decodes your binary tree to an n-ary tree.
+            public Node decode(TreeNode root)
+            {
+                if (root == null)
+                {
+                    return null;
+                }
+                Node result = new Node(root.val, new List<Node> { });
+                _treeList3 = new List<TreeNode3>();
+                _treeListNode = new List<Node>();
+                if (root != null)
+                {
+                    TreeNode3 root2 = new TreeNode3(root.val);
+                    Traverse4(root, root2, result);
+
+                }
+                foreach (var item in _treeList3)
+                {
+                    if (item.father != null)
+                    {
+                    }
+                }
+                return result;
+            }
+            public void Traverse4(TreeNode root, TreeNode3 root2, Node result)
+            {
+                //if (!_treeList.Contains(root2))
+                _treeList3.Add(root2);
+                _treeListNode.Add(result);
+                if (root.left != null)
+                {
+                    TreeNode3 node = new TreeNode3(root.left.val);
+                    Node result2 = new Node(root.left.val, new List<Node> { });
+                    result.children.Add(result2);
+                    root2.left = node;
+                    node.father = root2;
+                    Traverse4(root.left, node, result2);
+                }
+                if (root.right != null)
+                {
+                    TreeNode3 node = new TreeNode3(root.right.val);
+                    root2.right = node;
+                    node.father = root2;
+                    Node result2 = new Node(root.right.val, new List<Node> { });
+                    TreeNode3 temp = root2;
+                    
+                    while (temp.father != null)
+                    {
+                        if (temp.father.right == temp)
+                        {
+                            temp = temp.father;
+                            if (temp.father == null)
+                            {
+                                foreach (var item in _treeListNode)
+                                {
+                                    if (temp.val == item.val)
+                                    {
+                                        item.children.Add(result2);
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            foreach (var item in _treeListNode)
+                            {
+                                if (temp.father.val == item.val)
+                                {
+                                    item.children.Add(result2);
+                                }
+                            }
+                            
+                            break;
+                        }
+                    }
+                    Traverse4(root.right, node,result2);
+                }
+            }
         }
         public class Excel
         {
-            int[,] _excel = null;
+            public int[,] _excel = null;
+            //string[,] _formular = null;
+            List<string> _formu = new List<string>();
+            List<string[]> _formu2 = new List<string[]>();
             string abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             public Excel(int H, char W)
             {
                 int w = abc.IndexOf(W);
-                _excel = new int[H,w+1];
+                _excel = new int[H, w + 1];
             }
 
             public void Set(int r, char c, int v)
             {
                 _excel[r - 1, abc.IndexOf(c)] = v;
-                if (_sumFlag)
-                    Sum(_sum1, _sum2, _sum3);
+                for (int i = 0; i < _formu.Count; i++)
+                {
+                    string[] str = _formu[i].Split('|');
+                    if (Convert.ToInt32(str[0]) == r && str[1] == c.ToString())
+                    {
+
+                    }
+                    else
+                    {
+                        Sum2(Convert.ToInt32(str[0]), str[1].ToCharArray()[0], _formu2[i]);
+                    }
+                }
+                for (int i = 0; i < _formu.Count; i++)
+                {
+                    string[] str = _formu[i].Split('|');
+                    if (Convert.ToInt32(str[0]) == r && str[1] == c.ToString())
+                    {
+
+                    }
+                    else
+                    {
+                        Sum2(Convert.ToInt32(str[0]), str[1].ToCharArray()[0], _formu2[i]);
+                    }
+                }
+                for (int i = 0; i < _formu.Count; i++)
+                {
+                    string[] str = _formu[i].Split('|');
+                    if (Convert.ToInt32(str[0]) == r && str[1] == c.ToString())
+                    {
+                        _formu.Remove(_formu[i]);
+                        _formu2.Remove(_formu2[i]);
+                        break;
+                    }
+                }
+                //if (_sum1 == r && _sum2 == c)
+                //{
+                //    _sum1 = 0;
+                //    _sum2=new char();
+                //    _sum3 = null;
+                //    _sumFlag = false;
+                //}
+                //if (_sumFlag)
+                //    Sum(_sum1, _sum2, _sum3);
+            }
+            public void Set2(int r, char c, int v)
+            {
+                _excel[r - 1, abc.IndexOf(c)] = v;
+                for (int i = 0; i < _formu.Count; i++)
+                {
+                    string[] str = _formu[i].Split('|');
+                    if (Convert.ToInt32(str[0]) == r && str[1] == c.ToString())
+                    {
+
+                    }
+                    else
+                    {
+                        Sum2(Convert.ToInt32(str[0]), str[1].ToCharArray()[0], _formu2[i]);
+                    }
+                }
             }
 
             public int Get(int r, char c)
@@ -207,35 +442,87 @@ namespace WindowsFormsApplication3
                 int get = _excel[r - 1, abc.IndexOf(c)];
                 return get;
             }
-            int _sum1 = 0;
-            char _sum2;
-            string[] _sum3;
-            bool _sumFlag = false;
-            public int Sum(int r, char c, string[] strs)
+            public int Sum2(int r, char c, string[] strs)
             {
-                _sum1 = r; _sum2 = c; _sum3 = strs; _sumFlag = true;
+                //_sum1 = r; _sum2 = c; _sum3 = strs; _sumFlag = true;
+
                 int sum = 0;
-                for (int i = 0; i <strs.Length; i++)
+                for (int i = 0; i < strs.Length; i++)
                 {
                     if (strs[i].Contains(":"))
                     {
                         string[] list = strs[i].Split(':');
-                        int row = Convert.ToInt32(list[1].Substring(1)) - Convert.ToInt32(list[0].Substring(1))+1;
-                        int col = abc.IndexOf(list[1].Substring(0, 1)) - abc.IndexOf(list[0].Substring(0, 1))+1;
-                        for (int j = 0; j < row; j++)
+
+                        int row0 = Convert.ToInt32(list[0].Substring(1)) - 1;
+                        int row = Convert.ToInt32(list[1].Substring(1));
+                        int col0 = abc.IndexOf(list[0].Substring(0, 1));
+                        int col = abc.IndexOf(list[1].Substring(0, 1)) + 1;
+                        for (int j = row0; j < row; j++)
                         {
-                            for (int z = 0; z < col; z++)
+                            for (int z = col0; z < col; z++)
                             {
                                 sum += _excel[j, z];
                             }
                         }
+
                     }
                     else
                     {
-                        sum += _excel[Convert.ToInt32(strs[i].Substring(1)) - 1, abc.IndexOf(strs[i].Substring(0,1))];
+                        sum += _excel[Convert.ToInt32(strs[i].Substring(1)) - 1, abc.IndexOf(strs[i].Substring(0, 1))];
                     }
                 }
-                _excel[r - 1, abc.IndexOf(c)]=sum;
+                _excel[r - 1, abc.IndexOf(c)] = sum;
+                //Set2(r, c, sum);
+                return sum;
+            }
+
+            //int _sum1 = 0;
+            //char _sum2;
+            //string[] _sum3;
+            //bool _sumFlag = false;
+            public int Sum(int r, char c, string[] strs)
+            {
+                //_sum1 = r; _sum2 = c; _sum3 = strs; _sumFlag = true;
+                if (!_formu.Contains(r + "|" + c))
+                {
+                    _formu.Add(r + "|" + c);
+                    _formu2.Add(strs);
+                }
+                else
+                {
+                    _formu2.RemoveAt(_formu.IndexOf(r + "|" + c));
+                    _formu.Remove(r + "|" + c);
+                    _formu.Add(r + "|" + c);
+                    _formu2.Add(strs);
+                }
+                int sum = 0;
+                for (int i = 0; i < strs.Length; i++)
+                {
+                    if (strs[i].Contains(":"))
+                    {
+                        string[] list = strs[i].Split(':');
+
+                        int row0 = Convert.ToInt32(list[0].Substring(1)) - 1;
+                        int row = Convert.ToInt32(list[1].Substring(1));
+                        int col0 = abc.IndexOf(list[0].Substring(0, 1));
+                        int col = abc.IndexOf(list[1].Substring(0, 1)) + 1;
+                        for (int j = row0; j < row; j++)
+                        {
+                            for (int z = col0; z < col; z++)
+                            {
+                                sum += _excel[j, z];
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        sum += _excel[Convert.ToInt32(strs[i].Substring(1)) - 1, abc.IndexOf(strs[i].Substring(0, 1))];
+                    }
+                }
+                //_excel[r - 1, abc.IndexOf(c)]=sum;
+                Set2(r, c, sum);
+
                 return sum;
             }
         }
@@ -260,9 +547,9 @@ namespace WindowsFormsApplication3
                 //xs[xs.Length-1-i]=xs[i];
                 //xs[i]=temp;
 
-                xs=RevertChar(xs, i);
+                xs = RevertChar(xs, i);
             }
-            if (Int32.TryParse(xs,out result))
+            if (Int32.TryParse(xs, out result))
             {
                 return flag ? result : -1 * result;
             }
@@ -307,32 +594,37 @@ namespace WindowsFormsApplication3
         {
             int result = 0;
             int n = nums.Length;
-            int[][] dp = new int[n+2][];
+            int[][] dp = new int[n + 2][];
             for (int j = 0; j < dp.Length; j++)
             {
                 dp[j] = new int[n + 2];
             }
-            int[] nums2 = new int[n+2];
-            nums2[0]=1;
-            nums2[n+1]=1;
-            for(int i=1;i<n+1;i++){
-                nums2[i] = nums[i-1];
+            int[] nums2 = new int[n + 2];
+            nums2[0] = 1;
+            nums2[n + 1] = 1;
+            for (int i = 1; i < n + 1; i++)
+            {
+                nums2[i] = nums[i - 1];
             }
             //dp[i][j] = max(dp[i][k-1]+dp[k+1][j]+nums2[i-1]*nums2[j+1]*nums[k])
-            for(int i=1;i<n+1;i++){
-                dp[i][i] = nums2[i-1]*nums2[i]*nums2[i+1];
+            for (int i = 1; i < n + 1; i++)
+            {
+                dp[i][i] = nums2[i - 1] * nums2[i] * nums2[i + 1];
             }
-            for(int j=1;j<n;j++){
-                for(int i=1;i<n+1-j;i++){
+            for (int j = 1; j < n; j++)
+            {
+                for (int i = 1; i < n + 1 - j; i++)
+                {
                     int max;
-                    for(int k=i;k<=i+j;k++){
-                        int left = (k-1>=i)?dp[i][k-1]:0;
-                        int right = (k+1<=i+j)?dp[k+1][i+j]:0;
-                        dp[i][i+j] = Math.Max(left+right+nums2[i-1]*nums2[j+i+1]*nums2[k],dp[i][i+j]);
+                    for (int k = i; k <= i + j; k++)
+                    {
+                        int left = (k - 1 >= i) ? dp[i][k - 1] : 0;
+                        int right = (k + 1 <= i + j) ? dp[k + 1][i + j] : 0;
+                        dp[i][i + j] = Math.Max(left + right + nums2[i - 1] * nums2[j + i + 1] * nums2[k], dp[i][i + j]);
                     }
-                
+
                 }
-            
+
             }
             return dp[1][n];
             //int[] dp = new int[nums.Length + 1];
@@ -433,7 +725,7 @@ namespace WindowsFormsApplication3
                 _level = new List<int[]>();
                 int level = 0;
                 Traverse6(root, root2, ref level);
-                int max=0;
+                int max = 0;
                 int leaf1 = 0;
                 int leaf2 = 0;
                 foreach (var item in _level)
@@ -490,7 +782,7 @@ namespace WindowsFormsApplication3
             }
             return result;
         }
-        public void Traverse6(TreeNode root, TreeNode3 root2,ref int level)
+        public void Traverse6(TreeNode root, TreeNode3 root2, ref int level)
         {
             //if (!_treeList.Contains(root2))
             _treeList3.Add(root2);
@@ -502,7 +794,7 @@ namespace WindowsFormsApplication3
                 root2.left = node;
                 node.father = root2;
                 level++;
-                Traverse6(root.left, node,ref level);
+                Traverse6(root.left, node, ref level);
                 level--;
             }
             if (root.right != null)
@@ -511,7 +803,7 @@ namespace WindowsFormsApplication3
                 root2.right = node;
                 node.father = root2;
                 level++;
-                Traverse6(root.right, node,ref level);
+                Traverse6(root.right, node, ref level);
                 level--;
             }
         }
@@ -523,32 +815,34 @@ namespace WindowsFormsApplication3
             {
                 if (s[i] == ']')
                 {
-                    string str="";
-			        while(stack.Peek()!="[") {
-				        str=stack.Pop()+str;
-			        }
-			        stack.Pop();
-			        int count=0;
-			        string countString="";
+                    string str = "";
+                    while (stack.Peek() != "[")
+                    {
+                        str = stack.Pop() + str;
+                    }
+                    stack.Pop();
+                    int count = 0;
+                    string countString = "";
                     while ((stack.Count != 0) && Int32.TryParse(stack.Peek(), out count))
                     {
-				        countString=stack.Pop()+countString;
-			        }
-			        
-                    Int32.TryParse(countString,out count);
-			
-			        string retString="";
-			        for(int j=0;j<count;j++) {
+                        countString = stack.Pop() + countString;
+                    }
+
+                    Int32.TryParse(countString, out count);
+
+                    string retString = "";
+                    for (int j = 0; j < count; j++)
+                    {
                         retString = retString + str;
-			        }
-			        stack.Push(retString);
+                    }
+                    stack.Push(retString);
                 }
                 else
                 {
                     stack.Push(s[i].ToString());
                 }
             }
-            while (stack.Count!=0)
+            while (stack.Count != 0)
             {
                 result = stack.Pop() + result;
             }
@@ -556,7 +850,7 @@ namespace WindowsFormsApplication3
         }
         public int[] DailyTemperatures(int[] T)
         {
-            int[] result=new int[T.Length];
+            int[] result = new int[T.Length];
             List<int[]> list = new List<int[]>();
             int pointer = 0;
             for (int i = 0; i < T.Length; i++)
@@ -597,7 +891,7 @@ namespace WindowsFormsApplication3
             ListNode b = head.next;
             try
             {
-                while (b!=null)
+                while (b != null)
                 {
                     if (a == b)
                         return true;
@@ -613,7 +907,7 @@ namespace WindowsFormsApplication3
         }
         public int LongestConsecutive(int[] nums)
         {
-            if (nums ==null || nums.Length == 0)
+            if (nums == null || nums.Length == 0)
             {
                 return 0;
             }
@@ -715,11 +1009,11 @@ namespace WindowsFormsApplication3
         {
             int result = 0;
             List<int> list = new List<int>();
-            int[] intlist=new int[5]{0,0,0,0,0}; //上一个，计数，flag
+            int[] intlist = new int[5] { 0, 0, 0, 0, 0 }; //上一个，计数，flag
             result = LongestValidParentheses3(s, result, ref  intlist, ref list);
             if (intlist[3] > 0)
             {
-                for (int i = list.Count-1; i > -1; i--)
+                for (int i = list.Count - 1; i > -1; i--)
                 {
                     //if (i == list.Count - 1 && list.Count>1)
                     //{
@@ -739,7 +1033,7 @@ namespace WindowsFormsApplication3
                 string[] sArray = Regex.Split(s, "!", RegexOptions.IgnoreCase);
                 foreach (var item in sArray)
                 {
-                    if (item.Length>result)
+                    if (item.Length > result)
                         result = LongestValidParentheses3(item, result, ref  intlist, ref list);
                 }
                 //result = LongestValidParentheses3(s, result, ref  intlist, ref list);
@@ -846,19 +1140,19 @@ namespace WindowsFormsApplication3
         public void Rotate(int[][] matrix)
         {
             int length = matrix.Length;
-            for (int i = 0; i < matrix.Length/2; i++)
+            for (int i = 0; i < matrix.Length / 2; i++)
             {
                 int temp = 0;
                 int temp2 = 0;
-                for (int j = 0; j < matrix.Length-1 -2*i; j++)
+                for (int j = 0; j < matrix.Length - 1 - 2 * i; j++)
                 {
-                    temp = matrix[i][j+i];
-                    matrix[i][j + i] = matrix[length-1-i-j][ i];
-                    temp2 = matrix[i+j][length-1- i];
+                    temp = matrix[i][j + i];
+                    matrix[i][j + i] = matrix[length - 1 - i - j][i];
+                    temp2 = matrix[i + j][length - 1 - i];
                     matrix[i + j][length - 1 - i] = temp;
-                    temp = matrix[length - 1 - i][length - 1 - i-j ];
+                    temp = matrix[length - 1 - i][length - 1 - i - j];
                     matrix[length - 1 - i][length - 1 - i - j] = temp2;
-                    temp2 = matrix[length - 1 - i-j][i];
+                    temp2 = matrix[length - 1 - i - j][i];
                     matrix[length - 1 - i - j][i] = temp;
                 }
             }
@@ -880,9 +1174,9 @@ namespace WindowsFormsApplication3
                 }
             }
             List<int[]> resultList = new List<int[]>();
-            for (int i = 0; i < matrixList.Count-1; i++)
+            for (int i = 0; i < matrixList.Count - 1; i++)
             {
-                for (int j = matrixList.Count - 1; j > i ; j--)
+                for (int j = matrixList.Count - 1; j > i; j--)
                 {
                     int[] index = new int[7] { matrixList[i][0], matrixList[i][1], matrixList[i][2], matrixList[j][0], matrixList[j][1], matrixList[j][2], (matrixList[j][0] + 1 - matrixList[i][0]) * (matrixList[j][1] + 1 - matrixList[i][1]) };
                     resultList.Add(index);
@@ -920,7 +1214,7 @@ namespace WindowsFormsApplication3
             }
             return result;
         }
-        public int MaximalRectangle(int[] matrix1,char[][] matrix)
+        public int MaximalRectangle(int[] matrix1, char[][] matrix)
         {
             int result = matrix1[6];
             for (int i = matrix1[0]; i < matrix1[3] + 1; i++)
@@ -936,9 +1230,9 @@ namespace WindowsFormsApplication3
         public int MaximalRectangle(int[] matrix1, int[] matrix2, char[][] matrix)
         {
             int result = (matrix2[0] + 1 - matrix1[0]) * (matrix2[1] + 1 - matrix1[1]);
-            for (int i = matrix1[0]; i < matrix2[0]+1; i++)
+            for (int i = matrix1[0]; i < matrix2[0] + 1; i++)
             {
-                for (int j = matrix1[1]; j < matrix2[1]+1; j++)
+                for (int j = matrix1[1]; j < matrix2[1] + 1; j++)
                 {
                     if (matrix[i][j] != '1')
                         return -1;
@@ -946,7 +1240,7 @@ namespace WindowsFormsApplication3
             }
             return result;
         }
-        
+
         public int NumIslands(char[][] grid)
         {
             int result = 0;
@@ -955,16 +1249,16 @@ namespace WindowsFormsApplication3
             {
                 return 109;
             }
-            for (int i =0; i < grid.Length ; i++)
+            for (int i = 0; i < grid.Length; i++)
             {
-                for (int j = 0; j < grid[i].Length ; j++)
+                for (int j = 0; j < grid[i].Length; j++)
                 {
                     char left = (j == 0 ? '0' : grid[i][j - 1]);
-                    int[] leftA = new int[2] { i,j-1};
+                    int[] leftA = new int[2] { i, j - 1 };
                     char right = (j == grid[i].Length - 1 ? '0' : grid[i][j + 1]);
-                    int[] rightA = new int[2] { i, j +1 };
+                    int[] rightA = new int[2] { i, j + 1 };
                     char up = i == 0 ? '0' : grid[i - 1][j];
-                    int[] upA = new int[2] { i-1, j  };
+                    int[] upA = new int[2] { i - 1, j };
                     char down = i == grid.Length - 1 ? '0' : grid[i + 1][j];
                     int[] downA = new int[2] { i + 1, j };
                     if (allinOne.Count == 0 && grid[i][j] == '1')
@@ -1036,9 +1330,9 @@ namespace WindowsFormsApplication3
             bool result = false;
             foreach (var item in newnew)
             {
-                int[] left = new int[2] { item[0], item[1]-1 };
+                int[] left = new int[2] { item[0], item[1] - 1 };
                 int[] right = new int[2] { item[0], item[1] + 1 };
-                int[] up = new int[2] { item[0]-1, item[1]  };
+                int[] up = new int[2] { item[0] - 1, item[1] };
                 int[] down = new int[2] { item[0] + 1, item[1] };
                 if (ListContainArray(new2, left) ||
                     ListContainArray(new2, right) ||
@@ -1055,13 +1349,13 @@ namespace WindowsFormsApplication3
         {
             int result = 0;
             int[] record = new int[10 * heightMap.Length + heightMap[0].Length];
-            for (int i = 1; i < heightMap.Length-1; i++)
+            for (int i = 1; i < heightMap.Length - 1; i++)
             {
                 for (int j = 1; j < heightMap[i].Length - 1; j++)
                 {
-                    int left=Math.Max(record[10 * i + j-1], heightMap[i][j-1]);
-                    int right = Math.Max(record[10 * i + j +1], heightMap[i][j + 1]);
-                    int up = Math.Max(record[10 * (i-1) + j ], heightMap[i-1][j ]);
+                    int left = Math.Max(record[10 * i + j - 1], heightMap[i][j - 1]);
+                    int right = Math.Max(record[10 * i + j + 1], heightMap[i][j + 1]);
+                    int up = Math.Max(record[10 * (i - 1) + j], heightMap[i - 1][j]);
                     int down = Math.Max(record[10 * (i + 1) + j], heightMap[i + 1][j]);
                     if (left > heightMap[i][j] &&
                         right > heightMap[i][j] &&
@@ -1079,7 +1373,7 @@ namespace WindowsFormsApplication3
             int result = 0;
             int max = 0;
             int maxIndex = 0;
-            
+
             for (int i = 0; i < height.Length; i++)
             {
                 if (height[i] > max)
@@ -1093,18 +1387,18 @@ namespace WindowsFormsApplication3
             {
                 if (height[i] > height[i + 1])
                 {
-                    if (temp==-1)
+                    if (temp == -1)
                         temp = i;
                     result += height[temp] - height[i + 1];
                 }
-                else if (temp!=-1 && height[temp] > height[i + 1])
+                else if (temp != -1 && height[temp] > height[i + 1])
                 {
                     result += height[temp] - height[i + 1];
                 }
                 else
                     temp = -1;
             }
-            for (int i = height.Length-1; i > maxIndex; i--)
+            for (int i = height.Length - 1; i > maxIndex; i--)
             {
                 if (height[i] > height[i - 1])
                 {
@@ -1149,21 +1443,21 @@ namespace WindowsFormsApplication3
                         all.Add(new string[] { "p", "q", "r", "s" });
                         break;
                     case '8':
-                        all.Add(new string[] {  "t", "u","v" });
+                        all.Add(new string[] { "t", "u", "v" });
                         break;
                     case '9':
                         all.Add(new string[] { "w", "x", "y", "z" });
                         break;
                 }
             }
-            int j=-1;
-            string refs="";
+            int j = -1;
+            string refs = "";
             _result2 = new List<string>();
             LetterCombinations2(ref refs, all, j);
             return _result2;
         }
         List<string> _result2 = new List<string>();
-        public void LetterCombinations2(ref string digits, List<string[]> all,int j)
+        public void LetterCombinations2(ref string digits, List<string[]> all, int j)
         {
             for (int i = j + 1; i < all.Count; i++)
             {
@@ -1249,7 +1543,7 @@ namespace WindowsFormsApplication3
         //}
         public TreeNode3 RobTreeRoot(TreeNode3 root1, TreeNode3 root2, ref List<int> val, ref List<int> val2)
         {
-            
+
             while (root1 != null)
             {
                 val.Add(root1.val);
@@ -1335,14 +1629,14 @@ namespace WindowsFormsApplication3
                     //}
                     //else
                     //{
-                        for (int j = 938; j < profits.Count; j++)
+                    for (int j = 938; j < profits.Count; j++)
+                    {
+                        if ((alist[i] > profits[j][0] && alist[i] < profits[j][1]) || alist[i] == profits[j][0] || alist[i] == profits[j][1])
                         {
-                            if ((alist[i] > profits[j][0] && alist[i] < profits[j][1]) || alist[i] == profits[j][0] || alist[i] == profits[j][1])
-                            {
-                                index.Add(alist[i]);
-                                break;
-                            }
+                            index.Add(alist[i]);
+                            break;
                         }
+                    }
                     //}
                 }
                 foreach (var item in index)
@@ -1353,9 +1647,9 @@ namespace WindowsFormsApplication3
                 {
                     if (i != 0)
                     {
-                        int[] p = new int[alist[i] - alist[i-1]-1];
+                        int[] p = new int[alist[i] - alist[i - 1] - 1];
                         int count = 0;
-                        for (int j = alist[i - 1]+1; j < alist[i]; j++)
+                        for (int j = alist[i - 1] + 1; j < alist[i]; j++)
                         {
                             p[count] = prices[j];
                             count++;
@@ -1373,7 +1667,7 @@ namespace WindowsFormsApplication3
                         }
                         blist.Add(p);
                     }
-                    
+
                 }
                 foreach (var item in blist)
                 {
@@ -1437,7 +1731,7 @@ namespace WindowsFormsApplication3
                 //    if (item[2] > result)
                 //        result = item[2];
                 //}
-                for (int i = 0; i < (profits.Count > 100 ? profits.Count /2: profits.Count); i++)
+                for (int i = 0; i < (profits.Count > 100 ? profits.Count / 2 : profits.Count); i++)
                 {
                     int sum = profits[i][2];
                     if (sum > _max)
@@ -1455,27 +1749,27 @@ namespace WindowsFormsApplication3
             }
             return result;
         }
-        public void MaxProfit6(List<int[]> profits,int j,ref int sum)
+        public void MaxProfit6(List<int[]> profits, int j, ref int sum)
         {
             if (profits.Count > 70)
             {
                 _max = _max;
             }
-            for (int i = j+1; i < profits.Count; i++)
-            { 
-                if (profits[i][0]-1<=profits[j][1])
+            for (int i = j + 1; i < profits.Count; i++)
+            {
+                if (profits[i][0] - 1 <= profits[j][1])
                     continue;
                 sum += profits[i][2];
                 if (sum > _max)
                 {
                     _max = sum;
-                    
+
                 }
-                MaxProfit6(profits, i,ref sum);
+                MaxProfit6(profits, i, ref sum);
                 sum -= profits[i][2];
             }
         }
-        
+
         List<ListNode> list = new List<ListNode>();
         public ListNode DetectCycle(ListNode head)
         {
@@ -1491,7 +1785,7 @@ namespace WindowsFormsApplication3
             DetectCycle2(head, ref result);
             return result;
         }
-        public void DetectCycle2(ListNode head,ref ListNode result)
+        public void DetectCycle2(ListNode head, ref ListNode result)
         {
             if (head.next != null)
             {
@@ -1508,7 +1802,7 @@ namespace WindowsFormsApplication3
                 result = null;
                 return;
             }
-            DetectCycle2(head.next,ref result);
+            DetectCycle2(head.next, ref result);
         }
         public int UniquePaths(int m, int n)
         {
@@ -1521,9 +1815,9 @@ namespace WindowsFormsApplication3
             }
             long result = 1;
             List<string> list = new List<string>();
-            for (int i = m; i< m+n-1; i++)
+            for (int i = m; i < m + n - 1; i++)
             {
-                result = result*i;
+                result = result * i;
                 //result = result / (n - 1 + m - i);
             }
             if (n > 1)
@@ -1535,7 +1829,7 @@ namespace WindowsFormsApplication3
             }
             else
                 result = 1;
-            return (int)result ;
+            return (int)result;
         }
         public int MyAtoi(string str)
         {
@@ -1545,7 +1839,7 @@ namespace WindowsFormsApplication3
             bool flag = true;
             if (string.IsNullOrEmpty(str.Trim()) || (str.Trim().Substring(0, 1) != "-" && str.Trim().Substring(0, 1) != "+" && !Int32.TryParse(str.Trim().Substring(0, 1), out result)))
                 return 0;
-            if (trim.StartsWith("+") )
+            if (trim.StartsWith("+"))
             {
                 trim = trim.Substring(1, trim.Length - 1);
                 if (trim.StartsWith("-") || trim.StartsWith("+"))
@@ -1563,7 +1857,7 @@ namespace WindowsFormsApplication3
             {
                 if (result == 0 && flag)
                 {
-                    
+
                 }
                 else
                 {
@@ -1575,7 +1869,7 @@ namespace WindowsFormsApplication3
             if (num == "")
                 return 0;
             long result2 = 0;
-            if (num.Length > 10 || (num.Length == 10 && CompareWithInt32(num,pom)))
+            if (num.Length > 10 || (num.Length == 10 && CompareWithInt32(num, pom)))
             {
                 num = "2147483648";
                 if (pom)
@@ -1590,13 +1884,13 @@ namespace WindowsFormsApplication3
             }
             return pom ? result : -1 * result;
         }
-        public bool CompareWithInt32(string n,bool yes)
+        public bool CompareWithInt32(string n, bool yes)
         {
             int result = 0;
             string num = "2147483648";
             if (yes)
                 num = "2147483647";
-            while (n.Length>0 && Int32.TryParse(n.Substring(0, 1), out result))
+            while (n.Length > 0 && Int32.TryParse(n.Substring(0, 1), out result))
             {
                 if (Convert.ToInt32(num.Substring(0, 1)) > result)
                     return false;
@@ -1607,7 +1901,7 @@ namespace WindowsFormsApplication3
             }
             return false;
         }
-        
+
         public IList<int> GrayCode(int n)
         {
             IList<int> result = new List<int>();
@@ -1616,7 +1910,7 @@ namespace WindowsFormsApplication3
                 result.Add(0);
                 return result;
             }
-            int[] seq=new int[n];
+            int[] seq = new int[n];
             for (int i = 0; i < n; i++)
             {
                 seq[i] = -1;
@@ -1626,7 +1920,7 @@ namespace WindowsFormsApplication3
             int[] seq2 = new int[n];
             seq.CopyTo(seq2, 0);
             BackTrack(ref seq2, n, ref count);
-            for (int i = 0; i < Math.Pow(2,n); i++)
+            for (int i = 0; i < Math.Pow(2, n); i++)
             { }
             foreach (var item in _backTrack)
             {
@@ -1640,14 +1934,14 @@ namespace WindowsFormsApplication3
             return result;
         }
         List<int[]> _backTrack = new List<int[]>();
-        public void BackTrack(ref int[] seq,int bit,ref int count)
+        public void BackTrack(ref int[] seq, int bit, ref int count)
         {
             if (_backTrack.Count == Math.Pow(2, bit))
                 return;
-            int[] temp =new int[seq.Length];
-            seq.CopyTo(temp,0);
+            int[] temp = new int[seq.Length];
+            seq.CopyTo(temp, 0);
             temp[count] = temp[count] * (-1);
-            if (ListContainArray(_backTrack,temp))
+            if (ListContainArray(_backTrack, temp))
             {
                 temp[count] = temp[count] * (-1);
                 count++;
@@ -1659,10 +1953,10 @@ namespace WindowsFormsApplication3
             {
                 temp.CopyTo(seq, 0);
                 _backTrack.Add(seq);
-                count=0;
+                count = 0;
                 BackTrack(ref temp, bit, ref count);
             }
-            
+
         }
         public bool ListContainArray(List<int[]> List, int[] Array)
         {
@@ -1676,7 +1970,7 @@ namespace WindowsFormsApplication3
                         result = false;
                         break;
                     }
-                    if (i==Array.Length-1)
+                    if (i == Array.Length - 1)
                         return true;
                 }
             }
@@ -1684,7 +1978,7 @@ namespace WindowsFormsApplication3
         }
         public double FindMedianSortedArrays(int[] nums1, int[] nums2)
         {
-            double result=0;
+            double result = 0;
             List<double> list = new List<double>();
             foreach (var item in nums1)
             {
@@ -1701,11 +1995,11 @@ namespace WindowsFormsApplication3
             }
             else
             {
-                result = list[(list.Count-1) / 2] ;
+                result = list[(list.Count - 1) / 2];
             }
             return result;
         }
-        
+
         public int[] ProductExceptSelf(int[] nums)
         {
             int[] result = new int[nums.Length];
@@ -1727,9 +2021,9 @@ namespace WindowsFormsApplication3
                         r = r * nums[j];
                     }
                 }
-                if (list.Find(item => item[0] == nums[i])==null)
+                if (list.Find(item => item[0] == nums[i]) == null)
                 {
-                    list.Add(new int[2] { nums[i] ,r});
+                    list.Add(new int[2] { nums[i], r });
                 }
                 result[i] = r;
             }
@@ -1740,9 +2034,9 @@ namespace WindowsFormsApplication3
             if (nums == null || nums.Length == 0)
                 return -1;
             int result = 0;
-            int point=-1;
+            int point = -1;
             List<int> list = new List<int>();
-            for (int i= 0; i < nums.Length - 1; i++)
+            for (int i = 0; i < nums.Length - 1; i++)
             {
                 if (nums[i] > nums[i + 1])
                 {
@@ -1753,7 +2047,7 @@ namespace WindowsFormsApplication3
                 else
                     list.Add(nums[i]);
             }
-            if (list.Count > 0 && point!=-1)
+            if (list.Count > 0 && point != -1)
             {
                 for (int i = 0; i < nums.Length; i++)
                 {
@@ -1763,7 +2057,7 @@ namespace WindowsFormsApplication3
                     }
                     else
                     {
-                        nums[i] = list[i+point+1 - nums.Length];
+                        nums[i] = list[i + point + 1 - nums.Length];
                     }
                 }
             }
@@ -1771,9 +2065,9 @@ namespace WindowsFormsApplication3
             int rightindex = nums.Length - 1;
             result = BinarySearch(nums, ref rightindex, ref leftindex, target);
             if (-1 < result && result < nums.Length - point - 1)
-                result = result +  point + 1;
+                result = result + point + 1;
             else if (result > nums.Length - point - 2)
-                result = result - (nums.Length - point -1 );
+                result = result - (nums.Length - point - 1);
             return result;
         }
         static void SetCapacity(ref int[] iarr)
@@ -1786,7 +2080,7 @@ namespace WindowsFormsApplication3
             //{
             //    index = nums.Length % 2 == 0 ? nums.Length / 2 : (nums.Length - 1) / 2;
             //}
-            int result=-1;
+            int result = -1;
             if (target == nums[leftindex])
                 return leftindex;
             if (target == nums[rightindex])
@@ -1797,7 +2091,7 @@ namespace WindowsFormsApplication3
             if (nums[binary] > target)
             {
                 rightindex = binary;
-                result=BinarySearch(nums, ref rightindex, ref leftindex, target);
+                result = BinarySearch(nums, ref rightindex, ref leftindex, target);
             }
             else if (nums[binary] == target)
             {
@@ -1806,7 +2100,7 @@ namespace WindowsFormsApplication3
             else
             {
                 leftindex = binary;
-                result=BinarySearch(nums, ref rightindex, ref leftindex, target);
+                result = BinarySearch(nums, ref rightindex, ref leftindex, target);
             }
             return result;
         }
@@ -1814,7 +2108,7 @@ namespace WindowsFormsApplication3
         {
             //int result = 0;
             MaoPao(ref nums);
-            return nums[k-1];
+            return nums[k - 1];
         }
         public void MaoPao(ref int[] arr)
         {
@@ -1857,9 +2151,9 @@ namespace WindowsFormsApplication3
             IList<int> result = new List<int>();
             if (root == null)
                 return result;
-            
-            List<int> val=new List<int>();
-            List<TreeNode> tree=new List<TreeNode>();
+
+            List<int> val = new List<int>();
+            List<TreeNode> tree = new List<TreeNode>();
             MidTraverse(root, ref val, ref tree);
             result = _result;
             return result;
@@ -1867,14 +2161,14 @@ namespace WindowsFormsApplication3
         int _max = 0;
         List<TreeNode> _treeNodes = new List<TreeNode>();
         List<int> _result = new List<int>();
-        public void MidTraverse(TreeNode root, ref List<int> val,ref List<TreeNode> tree)
+        public void MidTraverse(TreeNode root, ref List<int> val, ref List<TreeNode> tree)
         {
             tree.Add(root);
             val.Add(root.val);
             if (root.left != null)
             {
 
-                MidTraverse(root.left, ref val,ref tree);
+                MidTraverse(root.left, ref val, ref tree);
                 if (!_treeNodes.Contains(tree[tree.Count - 1]))
                 {
                     _treeNodes.Add(tree[tree.Count - 1]);
@@ -1890,7 +2184,7 @@ namespace WindowsFormsApplication3
             }
             if (root.right != null)
             {
-                MidTraverse(root.right, ref val,ref tree);
+                MidTraverse(root.right, ref val, ref tree);
                 if (!_treeNodes.Contains(tree[tree.Count - 1]))
                 {
                     _treeNodes.Add(tree[tree.Count - 1]);
@@ -1909,7 +2203,7 @@ namespace WindowsFormsApplication3
             //}
         }
 
-        
+
         public int SingleNumber(int[] nums)
         {
             int result = 0;
@@ -1917,7 +2211,7 @@ namespace WindowsFormsApplication3
             for (int i = 0; i < nums.Length; i++)
             {
                 result = result ^ nums[i];
-                
+
             }
             return result;
         }
@@ -1930,38 +2224,38 @@ namespace WindowsFormsApplication3
             for (int i = 0; i < nums.Length; i++)
             {
                 count[i] = 1;
-                first.Add(nums[i]); 
+                first.Add(nums[i]);
             }
             List<int> subresult = new List<int>();
             int sum = 0;
-            PermuteRecursion(sum,nums, count, ref result, ref subresult);
-            
+            PermuteRecursion(sum, nums, count, ref result, ref subresult);
+
             return result;
         }
-        public void PermuteRecursion(int sum,int[] nums, int[] count, ref IList<IList<int>> result, ref List<int> subresult)
+        public void PermuteRecursion(int sum, int[] nums, int[] count, ref IList<IList<int>> result, ref List<int> subresult)
         {
             //for (int z = 0; z < nums.Length - 1; z++)
             //{
-                for (int i = 0; i < count.Length; i++)
+            for (int i = 0; i < count.Length; i++)
+            {
+                if (count[i] != 0)
                 {
-                    if (count[i] != 0)
-                    {
-                        sum++;
-                        count[i] = 0;
-                        subresult.Add(nums[i]);
-                        PermuteRecursion(sum, nums, count, ref result, ref subresult);
-                        count[i] = 1;
-                        sum--;
-                        subresult.RemoveAt(subresult.Count-1);
-                    }
+                    sum++;
+                    count[i] = 0;
+                    subresult.Add(nums[i]);
+                    PermuteRecursion(sum, nums, count, ref result, ref subresult);
+                    count[i] = 1;
+                    sum--;
+                    subresult.RemoveAt(subresult.Count - 1);
                 }
-                if (sum == count.Length)
-                {
+            }
+            if (sum == count.Length)
+            {
 
-                    List<int> subresult2 = new List<int>(subresult);
-                    result.Add(subresult2);
-                    return;
-                }
+                List<int> subresult2 = new List<int>(subresult);
+                result.Add(subresult2);
+                return;
+            }
             //}
         }
         public int RunCommand(MinStack minStack, string[] command, int[] value)
@@ -1977,7 +2271,7 @@ namespace WindowsFormsApplication3
                 }
                 if (command[i] == "top")
                 {
-                    reuslt=minStack.Top();
+                    reuslt = minStack.Top();
                 }
                 if (command[i] == "getMin")
                 {
@@ -2015,17 +2309,17 @@ namespace WindowsFormsApplication3
                 if (_min == _stack[_stack.Count - 1])
                     needRestore = true;
                 _stack.RemoveAt(_stack.Count - 1);
-                List<int> stack=new List<int>(_stack);
+                List<int> stack = new List<int>(_stack);
                 if (needRestore)
                 {
-                    
+
                     _stack.Sort((str, str2) =>
                     {
                         if (str < str2)
                             return 1;
                         return 0;
                     });
-                    if (_stack.Count>0)
+                    if (_stack.Count > 0)
                         _min = _stack[0];
                     _stack = stack;
                 }
@@ -2045,7 +2339,7 @@ namespace WindowsFormsApplication3
             }
         }
 
-        
+
         public int LeastInterval(char[] tasks, int n)
         {
             int result = 0;
@@ -2078,9 +2372,9 @@ namespace WindowsFormsApplication3
             {
                 for (int i = n; i < list.Count; i++)
                 {
-                    list=ConvertToList(tasks);
-                    int r=LeastInterval2(list, i);
-                    if (r < result || result==0)
+                    list = ConvertToList(tasks);
+                    int r = LeastInterval2(list, i);
+                    if (r < result || result == 0)
                         result = r;
                 }
             }
@@ -2123,7 +2417,7 @@ namespace WindowsFormsApplication3
         public int LeastInterval2(List<string[]> tasks, int n)
         {
             int result = 0;
-            string queue="";
+            string queue = "";
             int tasksCount = tasks.Count;
             int oldtasksCount = tasksCount;
             while (tasksCount > 0)
@@ -2132,14 +2426,14 @@ namespace WindowsFormsApplication3
                 for (int i = 0; i < n + 1; i++)
                 {
                     //tasksCount = tasks.Count;
-                    
+
                     for (int j = 0; j < tasks.Count; j++)
                     {
                         try
                         {
                             if (sum == n + 1)
                                 break;
-                            if (Convert.ToInt32(tasks[j][1]) == 0 || (queue.Contains(tasks[j][0]) && queue.Length-queue.LastIndexOf(tasks[j][0])-1 < n))
+                            if (Convert.ToInt32(tasks[j][1]) == 0 || (queue.Contains(tasks[j][0]) && queue.Length - queue.LastIndexOf(tasks[j][0]) - 1 < n))
                             {
                                 //tasks.Remove(tasks[j]);
                                 continue;
@@ -2159,7 +2453,7 @@ namespace WindowsFormsApplication3
                     //    if (Convert.ToInt32(tasks[z][1]) == 0)
                     //        tasks.Remove(tasks[z]);
                     //}
-                    
+
                 }
                 //if (tasksCount < oldtasksCount)
                 //{
@@ -2173,7 +2467,7 @@ namespace WindowsFormsApplication3
                 //}
                 tasksCount = tasks.FindAll(item => Convert.ToInt32(item[1]) != 0).Count;
 
-                if (n + 1 > sum && tasksCount>0)
+                if (n + 1 > sum && tasksCount > 0)
                 {
                     queue += "@";
                 }
@@ -2522,7 +2816,7 @@ namespace WindowsFormsApplication3
 
             //}
         }
-        
+
         public class TreeNode
         {
             public int val;
@@ -2635,7 +2929,7 @@ namespace WindowsFormsApplication3
             }
             return result;
         }
-        
+
 
         public int MaxProfit3(int[] prices)
         {
@@ -2680,7 +2974,7 @@ namespace WindowsFormsApplication3
         public int MaxProfit2(int[] prices)
         {
             int result = new int();
-            for (int j = 0; j < prices.Length-1; j++)
+            for (int j = 0; j < prices.Length - 1; j++)
             {
                 if (prices[j + 1] - prices[j] > 0)
                     result += prices[j + 1] - prices[j];
@@ -2690,7 +2984,7 @@ namespace WindowsFormsApplication3
         public int MaxProfit(int[] prices)
         {
             int result = new int();
-            for (int i = prices.Length-1 ; i >0; i--)
+            for (int i = prices.Length - 1; i > 0; i--)
             {
                 for (int j = 0; j < i; j++)
                 {
@@ -2701,7 +2995,7 @@ namespace WindowsFormsApplication3
             return result;
         }
 
-        
+
         //public int MaxDepth(TreeNode root)
         //{
         //    //int result = new int();
@@ -2712,13 +3006,13 @@ namespace WindowsFormsApplication3
         //        Traverse(root, ref valList);
         //    return _max;
         //}
-        
-        
+
+
 
         int _no = 1;
         public int[][] GenerateMatrix(int n)
         {
-            int[][] result=new int[n][];
+            int[][] result = new int[n][];
             for (int i = 0; i < n; i++)
             {
                 result[i] = new int[n];
@@ -2727,7 +3021,7 @@ namespace WindowsFormsApplication3
             _no = 1;
             try
             {
-                for (int i = 1; i < n*2+1; i++)
+                for (int i = 1; i < n * 2 + 1; i++)
                 {
                     if (z % 4 == 1)
                     {
@@ -2755,9 +3049,9 @@ namespace WindowsFormsApplication3
         {
             for (int i = col; i < range + col; i++)
             {
-                if (result[row][ i] == 0)
+                if (result[row][i] == 0)
                 {
-                    result[row][i]=_no;
+                    result[row][i] = _no;
                     if (i == range + col - 1)
                     {
                         x = row + 1;
@@ -2886,7 +3180,7 @@ namespace WindowsFormsApplication3
             //MoveRight(ref result, 1, 1, 2);
             return result;
         }
-        public void MoveRight(ref List<int> result,int row,int col,int range)
+        public void MoveRight(ref List<int> result, int row, int col, int range)
         {
             for (int i = col; i < range + col; i++)
             {
@@ -2894,7 +3188,7 @@ namespace WindowsFormsApplication3
                 {
                     result.Add(_matrix[row][i]);
                     _count[row, i] = 1;
-                    if (i == range + col-1)
+                    if (i == range + col - 1)
                     {
                         x = row + 1;
                         y = i;
@@ -2940,8 +3234,8 @@ namespace WindowsFormsApplication3
                     _count[row, i] = 1;
                     if (i == col - range + 1)
                     {
-                        x = row-1;
-                        y = i ;
+                        x = row - 1;
+                        y = i;
                     }
                 }
                 else
@@ -2969,7 +3263,7 @@ namespace WindowsFormsApplication3
                 }
             }
         }
-        
+
         public ListNode MergeKLists(ListNode[] lists)
         {
             if (lists.Length == 0)
@@ -3014,7 +3308,7 @@ namespace WindowsFormsApplication3
                 return now;
             else
             {
-                return getLevel(l.next, now + 1,ref result2);
+                return getLevel(l.next, now + 1, ref result2);
             }
         }
         public int ThreeSumClosest(int[] nums, int target)
@@ -3058,11 +3352,11 @@ namespace WindowsFormsApplication3
             //}
             for (int i = 0; i < height.Length; i++)
             {
-                for (int j = i+1; j < height.Length; j++)
+                for (int j = i + 1; j < height.Length; j++)
                 {
                     if (i != j)
                     {
-                        if (height[i] >= height[j] && height[j] * (i > j ? i - j : j - i)>result)
+                        if (height[i] >= height[j] && height[j] * (i > j ? i - j : j - i) > result)
                         {
                             result = height[j] * (i > j ? i - j : j - i);
                         }
@@ -3075,7 +3369,7 @@ namespace WindowsFormsApplication3
             }
             return result;
         }
-        
+
         public string LongestPalindrome2(string s)
         {
             string result = "";
@@ -3119,10 +3413,10 @@ namespace WindowsFormsApplication3
             string result = "";
             //List<string> subs=GetAllSub(s);
             string[,] re = GetAllSub2(s);
-            
-            for (int i = s.Length; i > 0;i-- )
+
+            for (int i = s.Length; i > 0; i--)
             {
-                for (int j = 0; j < s.Length+1-i; j++)
+                for (int j = 0; j < s.Length + 1 - i; j++)
                 {
                     //if (item == "cdc")
                     //{
@@ -3168,7 +3462,7 @@ namespace WindowsFormsApplication3
             {
                 for (int i = 0; i < (s.Length - 1) / 2; i++)
                 {
-                    s=RevertChar(s, i);
+                    s = RevertChar(s, i);
                 }
                 if (s.Equals(beforeRevert))
                     return true;
@@ -3196,7 +3490,7 @@ namespace WindowsFormsApplication3
                         return false;
                     }
                 }
-                
+
                 return true;
             }
             else
@@ -3208,17 +3502,17 @@ namespace WindowsFormsApplication3
                         return false;
                     }
                 }
-                
+
                 return true;
             }
             return false;
         }
         public string RevertChar(string input, int index)
         {
-            string begin = input.Substring(index,1);
+            string begin = input.Substring(index, 1);
             int endIndex = input.Length - 1 - index;
             string end = input.Substring(endIndex, 1);
-            input=input.Remove(index, 1);
+            input = input.Remove(index, 1);
             input = input.Insert(index, end);
             input = input.Remove(endIndex, 1);
             input = input.Insert(endIndex, begin);
@@ -3226,8 +3520,8 @@ namespace WindowsFormsApplication3
         }
         public string[,] GetAllSub2(string s)
         {
-            string[,] result = new string[s.Length+1, s.Length];
-            result[s.Length,0]=s;
+            string[,] result = new string[s.Length + 1, s.Length];
+            result[s.Length, 0] = s;
             int[] count = new int[s.Length + 1];
             for (int i = 0; i < s.Length + 1; i++)
             {
@@ -3238,14 +3532,14 @@ namespace WindowsFormsApplication3
             {
                 //result.Add(s.Substring(0, i + 1));
 
-                result[i + 1, count[i+1]] = s.Substring(0, i + 1);
-                count[i + 1]++;        
-                    
+                result[i + 1, count[i + 1]] = s.Substring(0, i + 1);
+                count[i + 1]++;
+
                 //result.Add(s.Substring(i + 1, s.Length - (i + 1)));
 
                 result[s.Length - (i + 1), count[s.Length - (i + 1)]] = s.Substring(i + 1, s.Length - (i + 1));
                 count[s.Length - (i + 1)]++;
-                        
+
                 if ((s.Length - i - 1) > 1)
                 {
                     for (int j = 1; j < s.Length - i - 1; j++)
@@ -3253,11 +3547,11 @@ namespace WindowsFormsApplication3
                         //result.Add(s.Substring(i + 1, s.Length - (i + 1) - j));
 
                         result[s.Length - (i + 1) - j, count[s.Length - (i + 1) - j]] = s.Substring(i + 1, s.Length - (i + 1) - j);
-                        count[s.Length - (i + 1) - j]++;        
+                        count[s.Length - (i + 1) - j]++;
                     }
                 }
             }
-            
+
             return result;
         }
         public List<string> GetAllSub(string s, ref List<string> result2)
@@ -3265,9 +3559,9 @@ namespace WindowsFormsApplication3
             List<string> result = new List<string>();
             result.Add(s);
             ///cbbd
-            for (int i=0; i < s.Length-1; i++)
+            for (int i = 0; i < s.Length - 1; i++)
             {
-                result.Add(s.Substring(0,i+1));
+                result.Add(s.Substring(0, i + 1));
                 result.Add(s.Substring(i + 1, s.Length - (i + 1)));
                 if ((s.Length - i - 1) > 1)
                 {
@@ -3459,17 +3753,17 @@ namespace WindowsFormsApplication3
             {
                 result7.Add(s.Substring(i, range));
             }
-            
+
             return result7;
         }
-        public string[] GetAllSub3(string s,int range)
+        public string[] GetAllSub3(string s, int range)
         {
             List<string> result = new List<string>();
             List<string> result7 = new List<string>();
             //123456789abcde
             if (s.Length > 10)
             {
-                for (int i = 0; i < s.Length-6; i++)
+                for (int i = 0; i < s.Length - 6; i++)
                 {
                     result7.Add(s.Substring(i, range));
                 }
@@ -3489,7 +3783,7 @@ namespace WindowsFormsApplication3
                     }
                 }
             }
-            string[] arr=result.ToArray();
+            string[] arr = result.ToArray();
             arr = arr.OrderByDescending(a => a.Length).ToArray();
             ////冒泡排序 
             //string test = "";//定义一个中间变量，用来交换值
@@ -3514,15 +3808,16 @@ namespace WindowsFormsApplication3
 
             return arr;
         }
-        
-       
- // Definition for singly-linked list.
- public class ListNode {
-      public int val;
-      public ListNode next;
-      public ListNode(int x) { val = x; }
-  }
- 
+
+
+        // Definition for singly-linked list.
+        public class ListNode
+        {
+            public int val;
+            public ListNode next;
+            public ListNode(int x) { val = x; }
+        }
+
 
         public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
@@ -3532,7 +3827,7 @@ namespace WindowsFormsApplication3
             string sum = TwoBigNumAdd(value1, value2);
             return calculateListNode(sum);
         }
-        public string getValueString(ListNode l,string s="")
+        public string getValueString(ListNode l, string s = "")
         {
             if (l.next == null)
                 return l.val.ToString() + s;
@@ -3705,3 +4000,4 @@ namespace WindowsFormsApplication3
         #endregion
     }
 }
+
