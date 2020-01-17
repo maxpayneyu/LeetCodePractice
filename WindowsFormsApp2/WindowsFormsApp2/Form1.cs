@@ -172,6 +172,7 @@ namespace WindowsFormsApplication3
             this.label1.Text = DecodeString(s);
 
             input = new int?[] { 1, 3, 2, 14, 10, 4, 6, null, null, null, 11, 8, 5, 9, 7, null, null, null, null, null, null, null, null, 15, null, 16, 13, null, null, 12 };
+            input = new int?[] { 1, 3, 2, 14, 10, 4, 6, null, null, null, 11, 8, 5, 9, 7, null, null, 15, null, 16, 13, null, null, 12 };
             root = ConvertToTree(input);
             root = LcaDeepestLeaves(root);
             value = new int[] { 3, 1, 5, 8 };
@@ -211,17 +212,783 @@ namespace WindowsFormsApplication3
 
             Node Node5 = new Node(5, new List<Node> { });
             Node Node6 = new Node(6, new List<Node> { });
-            
+
             Node bNode = new Node(2, new List<Node> { });
             Node cNode = new Node(3, new List<Node> { Node5, Node6 });
             Node dNode = new Node(4, new List<Node> { });
             Node aNode = new Node(1, new List<Node> { bNode, cNode, dNode });
             Codec codec = new Codec();
             aNode = null;
-            root=codec.encode(aNode);
+            root = codec.encode(aNode);
             aNode = codec.decode(root);
-        }
 
+            value = new int[] { 70, 4, 83, 56, 94, 72, 78, 43, 2, 86, 65, 100, 94, 56, 41, 66, 3, 33, 10, 3, 45, 94, 15, 12, 78, 60, 58, 0, 58, 15, 21, 7, 11, 41, 12, 96, 83, 77, 47 };
+            List<int> inputList = value.ToList();
+            QuickSort(inputList, 0, value.Length - 1);
+
+            DateTime date = Convert.ToDateTime("2019-11-12 11:07");
+            DateTime current = DateTime.Now;
+            this.label1.Text = Format(date, current).ToString();
+            value = new int[] { 9, 4, 2, 10, 7, 8, 8, 1, 9 };
+            int[] A = new int[100000];
+            for (int i = 0; i < A.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    A[i] = 1000000000;
+                }
+                else
+                {
+                    A[i] = 1000000000;
+                }
+            }
+            this.label1.Text = solution(A).ToString();
+            A = new int[] { 1, 2, 3, 3, 3, 1, 1, 2, 5 };
+            int[] B = new int[] { 2, 2, 3, 4, 4, 5, 3, 3, 6 };
+            this.label1.Text = solution(A, B).ToString();
+            //List<int> allList = new List<int>();
+            //for (int i = 1; i < 99999999; i++)
+            //{
+            //    if (CheckPerfectNumber(i))
+            //        allList.Add(i);
+            //}
+            //this.label1.Text = allList.Count.ToString();
+            //this.label1.Text = SubarraySum(new int[]{-1,-1,1},0).ToString();
+            this.label1.Text = SubarraySum(new int[] { 100, 1, 2, 3, 4 }, 3).ToString();
+            serialize(deserialize("[1, 3, 2, 14, 10, 4, 6, null, null, null, 11, 8, 5, 9, 7, null, null, 15, null, 16, 13, null, null, 12]"));
+            RemoveInvalidParentheses("))(a)())()(");
+            a = new int[] { 4, 1, 8, 4,5 };
+            //a = new int[] { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 };
+            l1 = convertToListNode(a);
+            ListNode headB = new ListNode(5);
+            ListNode headB2 = new ListNode(0);
+            ListNode headB3 = new ListNode(1);
+            headB.next = headB2; headB2.next = headB3; headB3.next = l1.next.next;
+            this.label1.Text = GetIntersectionNode(l1, headB).val.ToString();
+            a = new int[] { 1, 2 };
+            l1 = convertToListNode(a);
+            //this.label1.Text = ReverseList(l1).val.ToString();
+            this.label1.Text = ReverseBetween(l1,1,2).val.ToString();
+        }
+        public void NextPermutation(int[] nums)
+        {
+            for (int i = nums.Length-1; i >0; i--)
+            {
+                if (nums[i] > nums[i - 1])
+                {
+                    int temp = nums[i - 1];
+                    nums[i - 1] = nums[i];
+                    nums[i] = temp;
+                    break;
+                }
+                if (i == 1)
+                {
+                    List<int> result = nums.ToList();
+                    result.Sort((x, y) => x.CompareTo(y));
+                    nums = result.ToArray();
+                }
+            }
+        }
+        public ListNode ReverseBetween(ListNode head, int m, int n)
+        {
+            if (head == null)
+                return null;
+            if (head.next == null || m == n)
+                return head;
+            ListNode result = head;
+            ListNode begin = head; ListNode end = head;
+            ListNode headtemp = head;
+            ListNode temp = head;
+            ListNode ini = head;
+            int i=1;
+            
+            while (i<n+1)
+            {
+                if (i == m && m == 1)
+                {
+                    begin = null;
+                }
+                if (i == m-1)
+                {
+                    begin = result;
+                    ini = result.next;
+                    begin.next = null;
+                }
+                if (i == n)
+                {
+                    end = result.next;
+                    result.next = null;
+                }
+                result = (result.next ?? ini) ?? end;
+                i++;
+            }
+            temp=headtemp = result = ini;
+            ReverseList3(ref ini, ref result, ref headtemp, ref temp);
+            ini.next = end;
+            if (m != 1)
+                begin.next = result;
+            else
+                head = result;
+            return head;
+        }
+        public void ReverseList3(ref ListNode ini, ref ListNode head, ref ListNode headtemp, ref ListNode temp)
+        {
+            if (temp.next != null)
+            {
+                ReverseList3(ref ini, ref head, ref headtemp, ref temp.next);
+                headtemp.next = temp;
+                headtemp = temp;
+                if (ini == headtemp)
+                {
+                    headtemp.next = null;
+                }
+            }
+            else
+            {
+                head = temp;
+                headtemp = temp;
+            }
+        }
+        public ListNode ReverseList(ListNode head)
+        {
+            ListNode result = head;
+            ListNode headtemp = head;
+            ListNode temp = head;
+            ListNode ini = head;
+            ReverseList2(ref ini, ref result, ref headtemp, ref temp);
+            return result;
+        }
+        public void ReverseList2(ref ListNode ini,ref ListNode head, ref ListNode headtemp, ref ListNode temp)
+        {
+            if (temp.next != null)
+            {
+                ReverseList2(ref ini, ref head, ref headtemp, ref temp.next);
+                headtemp.next = temp;
+                headtemp = temp;
+                if (ini == headtemp)
+                {
+                    headtemp.next = null;
+                }
+            }
+            else
+            {
+                head = temp;
+                headtemp = temp;
+            }
+        }
+        public int MajorityElement(int[] nums)
+        {
+            int result = 0;
+            List<int[]> count = new List<int[]>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int index=count.FindIndex(item => item[0] == nums[i]);
+                if ( index== -1)
+                {
+                    count.Add(new int[2] { nums[i], 1 });
+                }
+                else
+                {
+                    count[index][1]++;
+                }
+            }
+            int index2 = count.FindIndex(item => item[1] > nums.Length/2);
+            return index2==-1?0:count[index2][0];
+        }
+        public ListNode GetIntersectionNode(ListNode headA, ListNode headB)
+        {
+            ListNode result = new ListNode(0);
+            ListNode tempA = headA;
+            ListNode tempB = headB;
+            while (tempA != null)
+            {
+                tempB = headB;
+                while (tempB != null)
+                {
+                    if (tempA == tempB)
+                    {
+                        result = tempA;
+                        return result;
+                    }
+                    tempB = tempB.next;
+                }
+                tempA = tempA.next;
+            }
+            return null;
+        }
+        public ListNode SortList(ListNode head)
+        {
+            if (head == null)
+                return null;
+            ListNode result = head;
+            List<int> list = new List<int>();
+            list.Add(head.val);
+            while (result.next != null)
+            {
+                list.Add(result.next.val);
+                result = result.next;
+            }
+            if (list.Count > 1)
+            {
+                QuickSort(list, 0, list.Count - 1);
+                result = new ListNode(list[0]);
+                ListNode temp = result;
+                for (int i = 1; i < list.Count; i++)
+                {
+                    temp.next = new ListNode(list[i]);
+                    temp = temp.next;
+                }
+            }
+            else
+                return head;
+            return result;
+        }
+        public IList<string> RemoveInvalidParentheses(string s)
+        {
+            List<string> result = new List<string>();
+            int left = 0;
+            int right = 0;
+            string temp=s;
+            int tempRight = 0;
+            while (temp[0] != '(')
+            {
+                if (temp[0] == ')')
+                {
+                    tempRight++;
+                }
+                temp = temp.Substring(1);
+                
+            }
+            for (int i = 0; i < tempRight; i++)
+            {
+                int index = s.IndexOf(')');
+                s=s.Remove(index, 1);
+            }
+            temp = s; tempRight = 0;
+            while (temp[temp.Length-1] != ')')
+            {
+                if (temp[temp.Length - 1] == '(')
+                {
+                    tempRight++;
+                }
+                temp = temp.Substring(0, temp.Length - 1);
+
+            }
+            for (int i = 0; i < tempRight; i++)
+            {
+                int index = s.LastIndexOf('(');
+                s = s.Remove(index, 1);
+            }
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '(')
+                    left++;
+                if (s[i] == ')')
+                    right++;
+            }
+            if (right > left)
+            { 
+
+            }
+            return result;
+        }
+        public int LengthOfLIS(int[] nums)
+        {
+            int result = 1;
+            if (nums == null)
+                return 0;
+            if (nums.Length==1)
+                return 1;
+            int[] index = new int[nums.Length];
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (nums[i] > nums[i - 1])
+                {
+                    result++;
+                }
+                else
+                {
+                    result = 1;
+                }
+                index[i] = Math.Max(index[i - 1], result);
+            }
+            return index[nums.Length-1];
+        }
+        // Encodes a tree to a single string.
+        public string serialize(TreeNode root)
+        {
+            StringBuilder result=new StringBuilder();
+            result.Append("[");
+            if (root == null)
+                return "[]";
+            List<TreeNode> nextLevel = new List<TreeNode>();
+            List<TreeNode> temp = new List<TreeNode>();
+            result.Append(root.val + ",") ;
+            if (root.left != null)
+            {
+                nextLevel.Add(root.left);
+                result.Append(root.left.val + ",");
+            }
+            else
+            {
+                result.Append("null,");
+            }
+            if (root.right != null)
+            {
+                nextLevel.Add(root.right);
+                result.Append(root.right.val + ",");
+            }
+            else
+            {
+                result.Append("null,");
+            }
+            while (nextLevel.Count != 0)
+            {
+                foreach (var item in nextLevel)
+                {
+                    if (item.left != null)
+                    {
+                        result.Append(item.left.val + ",");
+                        temp.Add(item.left);
+                    }
+                    else
+                    {
+                        result.Append("null,");
+                    }
+                    if (item.right != null)
+                    {
+                        result.Append(item.right.val + ",");
+                        temp.Add(item.right);
+                    }
+                    else
+                    {
+                        result.Append("null,");
+                    }
+                }
+                TreeNode[] temp2 = new TreeNode[temp.Count];
+                temp.CopyTo(temp2, 0);
+                nextLevel = temp2.ToList();
+                temp.Clear();
+            }
+            string resultString = result.ToString();
+            while (resultString.EndsWith("null,"))
+            {
+                resultString = resultString.Substring(0, resultString.Length - 5);
+            }
+            resultString = resultString.Substring(0, resultString.Length - 1) + "]";
+            return resultString;
+        }
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(string data)
+        {
+            data = data.Substring(1);
+            data = data.Substring(0, data.Length-1);
+            if (data.IndexOf(',')==-1)
+            {
+                if (data == "")
+                    return null;
+                return new TreeNode(Convert.ToInt32(data));
+            }
+            string[] dataList = data.Split(',');
+            int?[] dataListint = new int?[dataList.Length];
+            for (int i = 0; i < dataList.Length; i++)
+            {
+                if (dataList[i].Trim() == "null")
+                {
+                    dataListint[i] = null;
+                }
+                else
+                {
+                    dataListint[i] = Convert.ToInt32(dataList[i].Trim());
+                }
+            }
+            TreeNode root = ConvertToTree(dataListint);
+            return root;
+        }
+        public TreeNode ConvertToTree(int?[] input)
+        {
+            if (input.Length == 0 || input[0] == null)
+                return null;
+
+            TreeNode node = new TreeNode((int)input[0]);
+            Expand(node, input);
+            return node;
+        }
+        public void Expand(TreeNode root, int?[] input)
+        {
+            int level = input.Length/2+2;
+            //int sum = 0;
+            //int inputLength = input.Length;
+            //List<int> nullCount = new List<int>();
+            //for (int i = 0; i < inputLength; i++)
+            //{
+            //    for (int j = sum; j < sum + Convert.ToInt32(Math.Pow(2, level)); j++)
+            //    {
+            //        if (j < input.Length && input[j] == null)
+            //        {
+            //            nullCount.Add(level);
+            //        }
+            //    }
+            //    foreach (var item in nullCount)
+            //    {
+            //        if (level - item != 0)
+            //            inputLength += Convert.ToInt32(Math.Pow(2, level - item));
+            //    }
+            //    sum += Convert.ToInt32(Math.Pow(2, level));
+            //    level++;
+            //    if (sum > inputLength)
+            //        break;
+            //}
+            
+            int count = 1;
+            List<TreeNode> lastLevel = new List<TreeNode>();
+            List<TreeNode> thisLevel = new List<TreeNode>();
+            lastLevel.Add(root);
+            for (int i = 1; i < level; i++)
+            {
+                int tempZ = 0;
+                for (int j = 0; j < lastLevel.Count * 2; j++)
+                {
+                    //matrix[i, j] = input[count];
+                    if (input.Length < count + 1)
+                        break;
+                    if (input[count] == null)
+                    {
+                        count++;
+                        continue;
+                    }
+
+                    TreeNode node = new TreeNode((int)input[count]);
+                    thisLevel.Add(node);
+                    tempZ = j;
+                    for (int z = tempZ; z < lastLevel.Count * 2; z++)
+                    {
+                        if (z % 2 == 0 && lastLevel[z / 2].left == null)
+                        {
+                            lastLevel[z / 2].left = node;
+                            break;
+                        }
+                        if (z % 2 == 1 && lastLevel[(z - 1) / 2].right == null)
+                        {
+                            lastLevel[(z - 1) / 2].right = node;
+                            break;
+                        }
+                    }
+                    //try
+                    //{
+                    //    if (j % 2 == 0)
+                    //    {
+                    //        mat[i - 1, (j) / 2].left = mat[i, j];
+                    //        //mat[i, j].father = mat[i - 1, (j) / 2];
+                    //    }
+                    //    else
+                    //    {
+                    //        mat[i - 1, (j - 1) / 2].right = mat[i, j];
+                    //        //mat[i, j].father = mat[i - 1, (j - 1) / 2];
+                    //    }
+                    //}
+                    //catch
+                    //{
+                    //    mat[i, j] = null;
+                    //}
+                    count++;
+                }
+                TreeNode[] temp = new TreeNode[thisLevel.Count];
+                thisLevel.CopyTo(temp, 0);
+                lastLevel = temp.ToList();
+                thisLevel.Clear();
+            }
+        }
+        #region The Past
+        public int SubarraySum(int[] nums, int k)
+        {
+            int result = 0;
+            int[] numsList = new int[nums.Length];
+            int head = 0;
+            if (nums[0] == k)
+            {
+                numsList[0] = 1;
+                head = 1;
+            }
+            else if (nums[0] < k)
+                result = nums[0];
+            else
+                head = 1;
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (result + nums[i] == k)
+                {
+                    
+                    if (head < i)
+                    {
+                        result = result + nums[i] - nums[head];
+                        head++;
+                    }
+                    else
+                    {
+                        result = 0;
+                        head = i + 1;
+                        
+                    }
+                    numsList[i] = numsList[i - 1] + 1;
+                }
+                else if ((result + nums[i] > k && nums[head]>0)
+                    || (result + nums[i] < k && nums[head]<0))
+                {
+                    if (head < i)
+                    {
+                        result = result - nums[head];
+                        head++;
+                        i--;
+                    }
+                    else if (head == i)
+                    {
+                        result = nums[head];
+                        //head++;
+                        numsList[i] = numsList[i - 1];
+                    }
+                    else
+                    {
+                        result = 0;
+                        head = i + 1;
+                        numsList[i] = numsList[i - 1];
+                    }
+                }
+                else
+                {
+                    result += nums[i];
+                    numsList[i] = numsList[i - 1];
+                }
+            }
+            return numsList[numsList.Length-1];
+        }
+        public bool CheckPerfectNumber(int num)
+        {
+            List<int> allList = new List<int>();
+            int point=num/2+1;
+            for (int i = 1; i < point; i++)
+            {
+                if (num % i == 0)
+                {
+                    allList.Add(i);
+                    if (i!=1)
+                        allList.Add(num / i);
+                    point = num / i;
+                }
+            }
+            int sum = 0;
+            foreach (var item in allList)
+            {
+                sum += item;
+            }
+            //50130554
+            if (num == sum)
+                return true;
+            return false;
+        }
+        public int solution(int[] s, int[] e)
+        {
+            int result = 0;
+            List<int> sList = s.ToList();
+            
+            List<int> eList = e.ToList();
+            // 选出只有一天有时间的病人，这种要优先安排。
+            List<int> dupList = new List<int>();
+            for (int i = 0; i < sList.Count; i++)
+            {
+                if (sList[i] == eList[i])
+                {
+                    if (dupList.FindIndex(item => item == sList[i]) == -1)
+                    {
+                        dupList.Add(sList[i]);
+                    }
+                    else
+                    {
+                        sList.RemoveAt(i);
+                        eList.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+            // 剩下的都添加进range，理论上空闲时间跨度小的病人优先安排
+            // 但是试了一下自己想的用例都通不过，所以再反着遍历一遍range2，似乎可行
+            List<int[]> range = new List<int[]>();
+            List<int[]> range2 = new List<int[]>();
+            for (int i = 0; i < sList.Count; i++)
+            {
+                if (sList[i] != eList[i])
+                {
+                    range.Add(new int[3] { sList[i], eList[i], eList[i] - sList[i] });
+                    range2.Add(new int[3] { sList[i], eList[i], eList[i] - sList[i] });
+                }
+            }
+            range.Sort((x, y) => x[0].CompareTo(y[0]) + x[2].CompareTo(y[2]) * 2);
+            sList.Sort((x, y) => x.CompareTo(y));
+            eList.Sort((x, y) => x.CompareTo(y));
+            // 遍历理论上最大的时间跨度，然后给每天挑合适的病人
+            for (int i = sList[0]; i < eList[eList.Count-1]+1; i++)
+            {
+                if (dupList.FindIndex(item => item == i) != -1)
+                {
+                    result++;
+                }
+                else
+                {
+                    foreach (var item in range)
+                    {
+                        if (item[0] <= i && item[1] >= i)
+                        {
+                            range.Remove(item);
+                            result++;
+                            break;
+                        }
+                    }
+                }
+            }
+            int result2 = 0;
+            // 反向遍历获得result2，返回比较大的result
+            range2.Sort((x, y) => -x[1].CompareTo(y[1]) + x[2].CompareTo(y[2]) * 2);
+            for (int i = eList[eList.Count - 1]; i > sList[0]-1; i--)
+            {
+                if (dupList.FindIndex(item => item == i) != -1)
+                {
+                    result2++;
+                }
+                else
+                {
+                    foreach (var item in range2)
+                    {
+                        if (item[0] <= i && item[1] >= i)
+                        {
+                            range2.Remove(item);
+                            result2++;
+                            break;
+                        }
+                    }
+                }
+            }
+            return Math.Max(result,result2);
+        }
+        public int solution(int[] A)
+        {
+            // write your code in C# 6.0 with .NET 4.5 (Mono)
+            int result = 2;
+            if (A == null)
+                return 0;
+            if (A.Length==1)
+                return 1;
+            int[] compare = new int[A.Length];
+            for (int i = 1; i < A.Length; i++)
+            {
+                if (A[i] == A[i - 1])
+                    compare[i] = 0;
+                else if (A[i] > A[i - 1])
+                {
+                    compare[i] = 1;
+                }
+                else
+                {
+                    compare[i] = -1;
+                }
+            }
+            List<int> aList=compare.ToList();
+            if (!aList.Contains(-1) && !aList.Contains(1))
+                return 1;
+            int[] compareResult = new int[A.Length];
+            for (int i = 1; i < A.Length; i++)
+            {
+                if (compare[i] + compare[i - 1] == 0 && compare[i] * compare[i - 1] != 0)
+                {
+                    result++;
+                    compareResult[i] = Math.Max(compareResult[i - 1], result);
+                }
+                else
+                {
+                    compareResult[i] = compareResult[i - 1];
+                    result = 2;
+                }
+
+            }
+            result = Math.Max(compareResult[A.Length - 1], result);
+            return result;
+        }
+        public string Format(DateTime date, DateTime current)
+        {
+            TimeSpan ts1 = new TimeSpan(date.Ticks);
+            TimeSpan ts2 = new TimeSpan(current.Ticks);
+            TimeSpan ts3 = ts1.Subtract(ts2).Duration();
+            int compare=current.CompareTo(date);
+            if (compare<0)
+            {
+                return "0 minute(s) ago";
+            }
+            
+            if (ts3.Days >= 7)
+            {
+                return date.ToString("yyyy-MM-dd HH:mm");
+            }
+            else if (ts3.Days >= 1)
+            {
+                return ts3.Days.ToString() + " day(s) ago";
+            }
+
+            if (ts3.Hours < 1 && ts3.Minutes>=1)
+            {
+                return ts3.Minutes.ToString() + " minute(s) ago";
+            }
+            else if (ts3.Hours < 1 && ts3.Minutes < 1)
+            {
+                return current.ToString("yyyy-MM-dd HH:mm");
+            }
+            else
+            {
+                return ts3.Hours.ToString() + " hour(s) ago";
+            }
+
+            throw new System.ArgumentException("Not yet implemented");
+        }
+        public string solution(string name, string surname, int age)
+        {
+            // write your code in C# 6.0 with .NET 4.5 (Mono)
+            string result = "";
+            result = name.Substring(0, 2) + surname.Substring(0, 2) + age;
+            return result;
+        }
+        //获取按枢轴值左右分流后枢轴的位置
+        private static int Division(List<int> list, int left, int right)
+        {
+            while (left < right)
+            {
+                int num = list[left]; //将首元素作为枢轴
+                if (num > list[left + 1])
+                {
+                    list[left] = list[left + 1];
+                    list[left + 1] = num;
+                    left++;
+                }
+                else
+                {
+                    int temp = list[right];
+                    list[right] = list[left + 1];
+                    list[left + 1] = temp;
+                    right--;
+                }
+                //Console.WriteLine(string.Join(",", list));
+            }
+            //Console.WriteLine("--------------\n");
+            return left; //指向的此时枢轴的位置
+        }
+        private static void QuickSort(List<int> list, int left, int right)
+        {
+            if (left < right)
+            {
+                int i = Division(list, left, right);
+                //对枢轴的左边部分进行排序
+                QuickSort(list, i + 1, right);
+                //对枢轴的右边部分进行排序
+                QuickSort(list, left, i - 1);
+            }
+        }   
         // Definition for a Node.
         public class Node
         {
@@ -556,7 +1323,7 @@ namespace WindowsFormsApplication3
             else
                 return 0;
         }
-        #region The Past
+        
         public class Foo
         {
             private Semaphore second = new Semaphore(0, 1);
@@ -2074,6 +2841,45 @@ namespace WindowsFormsApplication3
         {
             Array.Resize<int>(ref iarr, iarr.Length + (2 << 3));
         }
+        public int[] SearchRange(int[] nums, int target)
+        {
+            int[] result = new int[2]{-1,-1};
+            if (nums.Length == 0)
+            {
+                return result;
+            }
+            int rightindex=nums.Length-1;
+            int leftindex = 0;
+            int index=BinarySearch(nums, ref rightindex, ref leftindex, target);
+            if (index == -1)
+                return result;
+            else
+            {
+                int temp = index;
+                result[0] = index;
+                result[1] = index;
+                try
+                {
+                    while (nums[temp - 1] == target)
+                    {
+                        temp--;
+                        result[0]--;
+                    }
+                }
+                catch { }
+                temp = index;
+                try
+                {
+                    while (nums[temp + 1] == target)
+                    {
+                        temp++;
+                        result[1]++;
+                    }
+                }
+                catch { }
+            }
+            return result;
+        }
         public int BinarySearch(int[] nums, ref int rightindex, ref int leftindex, int target)
         {
             //if (index == 0)
@@ -2832,67 +3638,7 @@ namespace WindowsFormsApplication3
             public TreeNode2 father;
             public TreeNode2(int x) { val = x; }
         }
-        public TreeNode ConvertToTree(int?[] input)
-        {
-            if (input.Length == 0 || input[0] == null)
-                return null;
-
-            TreeNode node = new TreeNode((int)input[0]);
-            Expand(node, input);
-            return node;
-        }
-        public void Expand(TreeNode root, int?[] input)
-        {
-            int level = 0;
-            int sum = 0;
-
-            for (int i = 0; i < input.Length; i++)
-            {
-
-                sum += Convert.ToInt32(Math.Pow(2, level));
-                level++;
-                if (sum > input.Length)
-                    break;
-            }
-            //int[,] matrix = new int[level, Convert.ToInt32(Math.Pow(2, level))];
-            TreeNode[,] mat = new TreeNode[level, Convert.ToInt32(Math.Pow(2, level))];
-            mat[0, 0] = root;
-            int count = 1;
-            for (int i = 1; i < level + 1; i++)
-            {
-                for (int j = 0; j < Math.Pow(2, i); j++)
-                {
-                    //matrix[i, j] = input[count];
-                    if (input.Length < count + 1)
-                        break;
-                    if (input[count] == null)
-                    {
-                        count++;
-                        continue;
-                    }
-
-                    mat[i, j] = new TreeNode((int)input[count]);
-                    try
-                    {
-                        if (j % 2 == 0)
-                        {
-                            mat[i - 1, (j) / 2].left = mat[i, j];
-                            //mat[i, j].father = mat[i - 1, (j) / 2];
-                        }
-                        else
-                        {
-                            mat[i - 1, (j - 1) / 2].right = mat[i, j];
-                            //mat[i, j].father = mat[i - 1, (j - 1) / 2];
-                        }
-                    }
-                    catch
-                    {
-                        mat[i, j] = null;
-                    }
-                    count++;
-                }
-            }
-        }
+        
         public int ClimbStairs(int n)
         {
             int result = new int();
